@@ -3,203 +3,241 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vintronics - Relive the Magic of Classic Electronics</title>
+    <title>Vintronics The Retro Gadgets Store</title>
     <style>
+        /* General Styles */
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            background-color: #f4f4f4;
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #fff;
         }
 
+        /* Header */
         header {
-            background-color:  orange;
-            color: #ffffff;
-            padding: 15px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 20px 50px;
+            background-color: #1a1a1a;
         }
-
-        header .logo {
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        header nav {
+        .logo {
             display: flex;
-            gap: 20px;
+            align-items: center;
         }
-
+        .logo img {
+            width: 50px;
+            margin-right: 15px;
+        }
+        .logo h1 {
+            font-size: 2.5em;
+            color: #ff9800;
+        }
         header nav a {
-            color: #fff;
+            margin: 0 15px;
             text-decoration: none;
-            font-size: 16px;
+            color: #ccc;
+            font-size: 1em;
         }
-
-        .search-bar {
-            display: flex;
-            margin: 20px;
-            justify-content: center;
-        }
-
-        .search-bar input {
-            padding: 10px;
-            width: 300px;
-            border: 1px solid #ddd;
-            border-radius: 5px 0 0 5px;
-        }
-
-        .search-bar button {
-            padding: 10px;
-            background-color: teal;
+        header nav a:hover {
             color: #fff;
-            border: none;
-            border-radius: 0 5px 5px 0;
-            cursor: pointer;
         }
 
-        .categories {
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background-image: url('retro-background.jpg'); /* Replace with your image */
+            background-size: cover;
+            background-position: center;
             display: flex;
-            justify-content: space-around;
-            background-color: #fff;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 0 50px;
+            color: #fff;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+        .hero h1 {
+            font-size: 4em;
+            font-weight: bold;
+            margin: 0;
+        }
+        .hero p {
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+        .hero button {
+            background-color: #ff9800;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1em;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .hero button:hover {
+            background-color: #e68900;
+        }
+
+        /* Scrolled Banner */
+        .banner {
+            overflow: hidden;
+            white-space: nowrap;
+            background-color: #1a1a1a;
             padding: 20px 0;
         }
-
-        .categories a {
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
+        .banner span {
+            display: inline-block;
+            padding: 0 30px;
+            color: #ff9800;
+            font-size: 1.2em;
+            animation: scroll 10s linear infinite;
+        }
+        @keyframes scroll {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(-100%);
+            }
         }
 
-        .carousel {
-            margin: 20px;
+        /* Featured Products */
+        .featured {
+            padding: 50px;
             text-align: center;
-            background-color: #ddd;
-            padding: 20px;
-            border-radius: 5px;
         }
-
-        .featured-section {
-            padding: 20px;
-            background-color: #fff;
-        }
-
-        .featured-section h3 {
-            text-align: center;
+        .featured h2 {
+            font-size: 2.5em;
+            color: #ff9800;
             margin-bottom: 20px;
         }
-
-        .products {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
         }
-
         .product-card {
-            background-color: #f9f9f9;
-            border: 1px solid #ddd;
+            background-color: #1a1a1a;
+            border: 1px solid #333;
             border-radius: 10px;
-            width: 200px;
-            padding: 10px;
+            padding: 15px;
             text-align: center;
         }
-
         .product-card img {
             width: 100%;
-            border-radius: 5px;
+            border-radius: 10px;
+        }
+        .product-card h3 {
+            font-size: 1.2em;
+            color: #fff;
+            margin: 10px 0;
+        }
+        .product-card p {
+            color: #ccc;
         }
 
+        /* Footer */
         footer {
-            background-color: #333;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-        }
-
-        footer .footer-links {
+            background-color: #1a1a1a;
+            padding: 30px 50px;
             display: flex;
-            justify-content: center;
-            gap: 20px;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            color: #ccc;
         }
-
-        footer .footer-links a {
-            color: #fff;
+        .footer-section {
+            flex: 1;
+            margin: 20px;
+        }
+        .footer-section h3 {
+            color: #ff9800;
+            margin-bottom: 15px;
+        }
+        .footer-section a {
             text-decoration: none;
+            color: #ccc;
+            display: block;
+            margin: 5px 0;
         }
-
-        footer p {
-            margin-top: 10px;
+        .footer-section a:hover {
+            color: #fff;
         }
     </style>
 </head>
 <body>
-    <!-- Header Section -->
+    <!-- Header -->
     <header>
-        <div class="logo">Vintronics</div>
+        <div class="logo">
+            <img src="vintronics-logo.JPG" alt="Logo"> <!-- Replace with your logo image -->
+            <h1>Vintronics</h1>
+        </div>
         <nav>
             <a href="#">Home</a>
-            <a href="#">Audio Devices</a>
-            <a href="#">Gaming Consoles</a>
-            <a href="#">Cameras</a>
-            <a href="#">Phones</a>
-            <a href="#">More</a>
+            <a href="#">Cart</a>
+            <a href="#">Wishlist</a>
+            <a href="#">Become a Seller</a>
+            <a href="#">Contact Us</a>
         </nav>
     </header>
 
-    <!-- Search Bar -->
-    <div class="search-bar">
-        <input type="text" placeholder="Search...">
-        <button>Search</button>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Welcome to Vintronics</h1>
+        <p>Discover timeless technology and bring back the charm of the past!</p>
+        <button>Explore Now</button>
+    </section>
+
+    <!-- Scrolled Banner -->
+    <div class="banner">
+        <span>Classic Radios</span>
+        <span>Vintage Calculators</span>
+        <span>Retro Game Consoles</span>
+        <span>Timeless Telephones</span>
     </div>
 
-    <!-- Categories Section -->
-    <div class="categories">
-        <a href="#">Audio Devices</a>
-        <a href="#">Gaming Consoles</a>
-        <a href="#">Cameras</a>
-        <a href="#">Phones</a>
-        <a href="#">Home Appliances</a>
-    </div>
-
-    <!-- Carousel Section -->
-    <div class="carousel">
-        <p>Image Carousel Placeholder</p>
-    </div>
-
-    <!-- Featured Products Section -->
-    <div class="featured-section">
-        <h3>Featured Products</h3>
-        <div class="products">
+    <!-- Featured Products -->
+    <section class="featured">
+        <h2>Featured Products</h2>
+        <div class="product-grid">
             <div class="product-card">
-                <img src="placeholder.png" alt="Product 1">
-                <h4>Vintage Audio Equipment</h4>
-                <p>Price: ₹5,000</p>
+                <img src="radio.jpg" alt="Retro Radio"> <!-- Replace with product image -->
+                <h3>Retro Radio</h3>
+                <p>Rs.5000/-</p>
             </div>
             <div class="product-card">
-                <img src="placeholder.png" alt="Product 2">
-                <h4>Headphones</h4>
-                <p>Price: ₹2,000</p>
+                <img src="calculator.jpg" alt="Retro Calculator"> <!-- Replace with product image -->
+                <h3>Vintage Calculator</h3>
+                <p>Rs.3000/-</p>
             </div>
             <div class="product-card">
-                <img src="placeholder.png" alt="Product 3">
-                <h4>Retro Clocks</h4>
-                <p>Price: ₹699</p>
+                <img src="console.jpg" alt="Retro Console"> <!-- Replace with product image -->
+                <h3>Retro Console</h3>
+                <p>Rs.6000/-</p>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Footer Section -->
+    <!-- Footer -->
     <footer>
-        <div class="footer-links">
-            <a href="#">FAQs</a>
-            <a href="#">Contact Us</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Use</a>
+        <div class="footer-section">
+            <h3>About Us</h3>
+            <p>Retro Gadgets is your destination for nostalgic technology and timeless designs.</p>
         </div>
-        <p>&copy; 2025 Vintronics. All rights reserved.</p>
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <a href="#">Home</a>
+            <a href="#">Fastest  Delivery</a>
+            <a href="#">Secure Payments</a>
+            <a href="#">About Us</a>
+        </div>
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+            <p>Email: vintronics@retrogadgets.com</p>
+            <p>Phone: +91 1234567890</p>
+        </div>
     </footer>
 </body>
 </html>
