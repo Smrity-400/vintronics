@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RetroGadgets - Vintage Electronics Store</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title>Vintronics - Relive the Magic of Classic Electronics</title>
     <style>
         body {
-            font-family: 'Press Start 2P', cursive;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -17,231 +15,101 @@
 
         header {
             background-color: #333;
-            color: #fff;
-            padding: 20px 0;
-        }
-
-        .container {
-            width: 90%;
-            margin: 0 auto;
-            max-width: 1200px;
+            color: #ffffff;
+            padding: 15px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .logo {
+        header .logo {
             font-size: 24px;
             font-weight: bold;
         }
 
-        nav ul {
-            list-style: none;
-            padding: 0;
+        header nav {
             display: flex;
+            gap: 20px;
         }
 
-        nav ul li {
-            margin: 0 15px;
-        }
-
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .auth-buttons a {
-            margin-left: 10px;
-            color: #fff;
-            text-decoration: none;
-            padding: 8px 16px;
-            background-color: #f39c12;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .auth-buttons a:hover {
-            background-color: #d35400;
-        }
-
-        .hero {
-            background: url('images/retro-background.jpg') no-repeat center center/cover;
-            height: 80vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            text-align: center;
-        }
-
-        .hero h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-
-        .btn-primary {
-            padding: 12px 24px;
-            background-color: #e74c3c;
+        header nav a {
             color: #fff;
             text-decoration: none;
             font-size: 16px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
         }
 
-        .btn-primary:hover {
-            background-color: #c0392b;
+        .search-bar {
+            display: flex;
+            margin: 20px;
+            justify-content: center;
         }
 
-        .featured-products {
-            background-color: #fff;
-            padding: 40px 0;
-        }
-
-        .featured-products h3 {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 24px;
-            color: #333;
-        }
-
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            padding: 0 20px;
-        }
-
-        .product-card {
-            background-color: #fff;
+        .search-bar input {
+            padding: 10px;
+            width: 300px;
             border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
-            transition: box-shadow 0.3s ease;
+            border-radius: 5px 0 0 5px;
         }
 
-        .product-card:hover {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .product-card img {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-            margin-bottom: 20px;
+        .search-bar button {
+            padding: 10px;
+            background-color: teal;
+            color: #fff;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
         }
 
         .categories {
-            background-color: #f4f4f4;
-            padding: 40px 0;
+            display: flex;
+            justify-content: space-around;
+            background-color: #fff;
+            padding: 20px 0;
         }
 
-        .categories h3 {
-            text-align: center;
-            font-size: 24px;
+        .categories a {
+            text-decoration: none;
             color: #333;
+            font-weight: bold;
+        }
+
+        .carousel {
+            margin: 20px;
+            text-align: center;
+            background-color: #ddd;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .featured-section {
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        .featured-section h3 {
+            text-align: center;
             margin-bottom: 20px;
         }
 
-        .category-grid {
+        .products {
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
             gap: 20px;
         }
 
-        .category-card {
-            background-color: #fff;
+        .product-card {
+            background-color: #f9f9f9;
             border: 1px solid #ddd;
             border-radius: 10px;
-            padding: 20px;
+            width: 200px;
+            padding: 10px;
             text-align: center;
-            width: 150px;
-            transition: box-shadow 0.3s ease;
         }
 
-        .category-card:hover {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .why-choose-us {
-            background-color: #fff;
-            padding: 40px 0;
-        }
-
-        .why-choose-us h3 {
-            text-align: center;
-            font-size: 24px;
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-        .why-choose-us .feature {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-            padding: 0 20px;
-        }
-
-        .why-choose-us .feature img {
-            width: 50px;
-            height: 50px;
-            margin-right: 20px;
-        }
-
-        .testimonials {
-            background-color: #f4f4f4;
-            padding: 40px 0;
-        }
-
-        .testimonials h3 {
-            text-align: center;
-            font-size: 24px;
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-        .testimonial {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
-            margin: 0 20px;
-        }
-
-        .cta {
-            background-color: #e74c3c;
-            color: #fff;
-            text-align: center;
-            padding: 40px 20px;
-        }
-
-        .cta h3 {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-
-        .cta a {
-            padding: 12px 24px;
-            background-color: #fff;
-            color: #e74c3c;
-            text-decoration: none;
-            font-size: 16px;
+        .product-card img {
+            width: 100%;
             border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .cta a:hover {
-            background-color: #c0392b;
-            color: #fff;
         }
 
         footer {
@@ -251,131 +119,87 @@
             text-align: center;
         }
 
-        footer ul {
-            list-style: none;
-            padding: 0;
+        footer .footer-links {
             display: flex;
             justify-content: center;
             gap: 20px;
         }
 
-        footer ul li a {
+        footer .footer-links a {
             color: #fff;
             text-decoration: none;
+        }
+
+        footer p {
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
     <!-- Header Section -->
     <header>
-        <div class="container">
-            <h1 class="logo">RetroGadgets</h1>
-            <nav>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#products">Products</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="auth-buttons">
-                <a href="#" class="login">Login</a>
-                <a href="#" class="signup">Sign Up</a>
-            </div>
-        </div>
+        <div class="logo">Vintronics</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Audio Devices</a>
+            <a href="#">Gaming Consoles</a>
+            <a href="#">Cameras</a>
+            <a href="#">Phones</a>
+            <a href="#">More</a>
+        </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h2>🎉 Welcome to RetroGadgets!</h2>
-            <p>🕰 Relive the Magic of Classic Electronics</p>
-            <a href="#products" class="btn-primary">Shop Now</a>
-            <a href="#about" class="btn-primary">Learn More</a>
-        </div>
-    </section>
-
-    <!-- Featured Products Section -->
-    <section id="products" class="featured-products">
-        <div class="container">
-            <h3>Featured Products</h3>
-            <div class="product-grid">
-                <div class="product-card">
-                    <img src="images/sony-walkman.jpg" alt="Sony Walkman">
-                    <h4>Sony Walkman</h4>
-                    <p>Price: ₹5,000</p>
-                </div>
-                <div class="product-card">
-                    <img src="images/game-boy.jpg" alt="Game Boy Classic">
-                    <h4>Game Boy Classic</h4>
-                    <p>Price: ₹6,500</p>
-                </div>
-                <div class="product-card">
-                    <img src="images/polaroid-camera.jpg" alt="Polaroid Camera">
-                    <h4>Polaroid Camera</h4>
-                    <p>Price: ₹4,000</p>
-                </div>
-                <div class="product-card">
-                    <img src="images/rotary-phone.jpg" alt="Rotary Phone">
-                    <h4>Vintage Rotary Phone</h4>
-                    <p>Price: ₹3,000</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <input type="text" placeholder="Search...">
+        <button>Search</button>
+    </div>
 
     <!-- Categories Section -->
-    <section class="categories">
-        <div class="container">
-            <h3>Categories</h3>
-            <div class="category-grid">
-                <div class="category-card">
-                    <h4>📻 Audio Devices</h4>
-                </div>
-                <div class="category-card">
-                    <h4>🎮 Gaming Consoles</h4>
-                </div>
-                <div class="category-card">
-                    <h4>📷 Cameras</h4>
-                </div>
-                <div class="category-card">
-                    <h4>💻 Computers</h4>
-                </div>
-                <div class="category-card">
-                    <h4>📞 Phones</h4>
-                </div>
+    <div class="categories">
+        <a href="#">Audio Devices</a>
+        <a href="#">Gaming Consoles</a>
+        <a href="#">Cameras</a>
+        <a href="#">Phones</a>
+        <a href="#">Home Appliances</a>
+    </div>
+
+    <!-- Carousel Section -->
+    <div class="carousel">
+        <p>Image Carousel Placeholder</p>
+    </div>
+
+    <!-- Featured Products Section -->
+    <div class="featured-section">
+        <h3>Featured Products</h3>
+        <div class="products">
+            <div class="product-card">
+                <img src="placeholder.png" alt="Product 1">
+                <h4>Vintage Audio Equipment</h4>
+                <p>Price: ₹5,000</p>
+            </div>
+            <div class="product-card">
+                <img src="placeholder.png" alt="Product 2">
+                <h4>Headphones</h4>
+                <p>Price: ₹2,000</p>
+            </div>
+            <div class="product-card">
+                <img src="placeholder.png" alt="Product 3">
+                <h4>Retro Clocks</h4>
+                <p>Price: ₹699</p>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Why Choose Us Section -->
-    <section class="why-choose-us">
-        <div class="container">
-            <h3>Why Choose Us</h3>
-            <div class="feature">
-                <img src="images/secure-payments.png" alt="Secure Payments">
-                <p>🔒 Secure Payments</p>
-            </div>
-            <div class="feature">
-                <img src="images/fast-shipping.png" alt="Fast Shipping">
-                <p>🚚 Fast Shipping</p>
-            </div>
-            <div class="feature">
-                <img src="images/customer-support.png" alt="Customer Support">
-                <p>📞 24/7 Customer Support</p>
-            </div>
-            <div class="feature">
-                <img src="images/exclusive-finds.png" alt="Exclusive Finds">
-                <p>📦 Exclusive Vintage Finds</p>
-            </div>
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-links">
+            <a href="#">FAQs</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Use</a>
         </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-        <div class="container">
-            <h3>Testimonials</h3>
-            <div class="testimonial">
-                <p>"RetroGadgets helped me find my favorite childhood console. Great service and fast delivery!" - John D.</p>
-            </div>
-            <div
+        <p>&copy; 2025 Vintronics. All rights reserved.</p>
+    </footer>
+</body>
+</html>
