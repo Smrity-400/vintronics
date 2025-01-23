@@ -135,6 +135,70 @@
                 transform: translateX(-100%);
             }
         }
+         /* Deals Section */
+        .deals-section {
+            background-color: #121212;
+            color: #fff;
+            padding: 50px;
+            text-align: center;
+        }
+        .deals-section h2 {
+            font-size: 2.5em;
+            color: #ff9800;
+            margin-bottom: 20px;
+        }
+        .deals-container {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .deal-item {
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            width: 250px;
+        }
+        .deal-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .deal-item h3 {
+            font-size: 1.5em;
+            color: #fff;
+            margin: 15px 0;
+        }
+        .deal-item p {
+            font-size: 1em;
+            color: #ccc;
+            margin: 10px 0;
+        }
+        .original-price {
+            text-decoration: line-through;
+            margin-right: 10px;
+            color: #ff5252;
+        }
+        .discounted-price {
+            font-weight: bold;
+            color: #4caf50;
+        }
+        .deal-item button {
+            background-color: #ff9800;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #fff;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .deal-item button:hover {
+            background-color: #e68900;
+        }
 
         /* Featured Products */
         .featured {
@@ -240,6 +304,36 @@
         <span>Timeless Telephones</span>
       </div>
     </div>
+    <!-- Deals Section -->
+    <section class="deals-section">
+        <h2>Exclusive Deals</h2>
+        <div class="deals-container">
+            <div class="deal-item">
+                <img src="deal1.jpg" alt="Deal 1"> <!-- Replace with your image -->
+                <h3>Retro Radio</h3>
+                <p><span class="original-price">Rs.5000</span> 
+                    <span class="discounted-price">Rs.4000</span></p>
+                <p>20% Off</p>
+                <button>Shop Now</button>
+            </div>
+            <div class="deal-item">
+                <img src="deal2.jpg" alt="Deal 2"> <!-- Replace with your image -->
+                <h3>Vintage Calculator</h3>
+                <p><span class="original-price">Rs.3000</span> 
+                    <span class="discounted-price">Rs.2400</span></p>
+                <p>20% Off</p>
+                <button>Shop Now</button>
+            </div>
+            <div class="deal-item">
+                <img src="deal3.jpg" alt="Deal 3"> <!-- Replace with your image -->
+                <h3>Retro Console</h3>
+                <p><span class="original-price">Rs.6000</span>
+                     <span class="discounted-price">Rs.4800</span></p>
+                <p>20% Off</p>
+                <button>Shop Now</button>
+            </div>
+        </div>
+    </section>
 
     <!-- Featured Products -->
     <section class="featured">
