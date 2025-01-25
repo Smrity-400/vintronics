@@ -8,32 +8,55 @@
             color: #fff;
         }
 
-         /* Search Bar */
-         .search-bar {
-            display: flex;
-            align-items: center;
-            background-color: #fff;
-            border-radius: 30px;
-            padding: 5px 10px;
-        }
-        .search-bar input {
-            border: yellow;
-            outline: yellow;
-            padding: 5px;
-            font-size: 1.5em;
-        }
-        .search-bar button {
-            background-color: #ff9800;
-            border: none;
-            padding: 5px 15px;
-            color: #fff;
-            font-size: 1em;
-            border-radius: 20px;
-            cursor: pointer;
-        }
-        .search-bar button:hover {
-            background-color: #e68900;
-        }
+        /* Attractive Search Bar */
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    width: 30%;
+    background: linear-gradient(90deg, #1b0708, #333);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+    padding: 5px;
+}
+
+.search-container input {
+    flex: 1;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 15px;
+    font-size: 16px;
+    outline: none;
+    margin-right: 10px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-container input::placeholder {
+    color: #777;
+    font-style: italic;
+}
+
+.search-container button {
+    background: linear-gradient(90deg, #ff8a00, #e52e71);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.search-container button:hover {
+    background: linear-gradient(90deg, #e52e71, #ff8a00);
+    transform: scale(1.1);
+}
+
+.search-container button:active {
+    transform: scale(0.95);
+}
 
         /* Header */
         header {
@@ -48,17 +71,14 @@
             max-height: 150px; 
             object-fit: contain; 
             margin: 10px 0; 
-          }
-          
-          .logo-container {
+        }
+        .logo-container {
             display: flex; 
             align-items: center;
             justify-content: center; 
             padding: 10px; 
             background-color: white; 
-          }
-        
-        
+        }
         header nav a {
             margin: 0px;
             text-decoration: none;
@@ -69,12 +89,10 @@
             color: #fff;
         }
         .navbar, .nav-links a {
-            gap: 20px;
+            gap: 10px;
             margin: 0; 
-            padding: 0;
-          }
-
-       
+            padding: 10%;
+        }
 
         /* Hero Section */
         .hero {
@@ -113,32 +131,33 @@
         .hero button:hover {
             background-color: #e68900;
         }
+        
         /* Container to hold the banner */
         .banner-container {
-            width: 100%; /* Full-width container */
-            overflow: hidden; /* Hide overflowing content */
+            width: 100%; 
+            overflow: hidden; 
             position: relative;
-            height: 250px; /* Adjust height as needed */
-            background-color: #f9f9f9; /* Optional background */
+            height: 250px; 
+            background-color: #f9f9f9; 
         }
         
         /* Track that holds the slides */
         .banner-track {
             display: flex;
-            animation: slide 30s linear infinite; /* 12s for smooth loop */
+            animation: slide 30s linear infinite;
         }
         
         /* Individual slides */
         .banner-slide {
             position: relative;
-            min-width: 100%; /* Each slide takes the full width of the container */
-            height: 100%; /* Full height of the container */
+            min-width: 100%; 
+            height: 100%;
         }
         
         .banner-slide img {
             width: 100%;
-            height: 100%;
-            object-fit: cover; /* Ensures the image fits nicely */
+            height: 500%;
+            object-fit: cover; 
         }
         
         /* Discount badge */
@@ -198,7 +217,8 @@
                 transform: translateX(-100%);
             }
         }
-         /* Deals Section */
+         
+        /* Deals Section */
         .deals-section {
             background-color: #121212;
             color: #fff;
@@ -323,4 +343,8 @@
         }
         .footer-section a:hover {
             color: #fff;
+        }
+        .nav-1 {
+            display:flex;
+
         }
