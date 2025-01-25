@@ -34,7 +34,6 @@ body {
     background-color: #e68900;
 }
 
-<<<<<<< HEAD
         /* Attractive Search Bar */
 .search-container {
     display: flex;
@@ -95,7 +94,7 @@ body {
         }
         .logo {
             max-width: 200px; 
-            max-height: 150px; 
+            max-height: 300px; 
             object-fit: contain; 
             margin: 10px 0; 
         }
@@ -115,10 +114,33 @@ body {
         header nav a:hover {
             color: #fff;
         }
-        .navbar, .nav-links a {
-            gap: 10px;
-            margin: 0; 
-            padding: 10%;
+        .navbar {
+            
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .nav-list {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: inline-flex;
+            gap: 20px; /* Adds spacing between items */
+        }
+        
+        .nav-list li {
+            display: inline;
+        }
+        
+        .nav-list a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        .nav-list a:hover {
+            text-decoration: underline;
         }
 
         /* Hero Section */
@@ -158,6 +180,25 @@ body {
         .hero button:hover {
             background-color: #e68900;
         }
+        /* Scrolled Banner */
+        .banner {
+            overflow: hidden;
+            background-color: #1a1a1a;
+            padding: 30px 0;
+            position: relative;
+        }
+        .banner-content {
+            display: inline-block;
+            white-space: nowrap;
+            
+        }
+        .banner span {
+            display: inline-block;
+            padding: 0 30px;
+            color: #ff9800;
+            font-size: 1.2em;
+        }
+
         
         /* Container to hold the banner */
         .banner-container {
@@ -217,33 +258,7 @@ body {
             }
         }
 
-        /* Scrolled Banner */
-        .banner {
-            overflow: hidden;
-            background-color: #1a1a1a;
-            padding: 20px 0;
-            position: relative;
-        }
-        .banner-content {
-            display: inline-block;
-            white-space: nowrap;
-            animation: scroll-banner 10s linear infinite;
-        }
-        .banner span {
-            display: inline-block;
-            padding: 0 30px;
-            color: #ff9800;
-            font-size: 1.2em;
-            animation: scroll 10s linear infinite;
-        }
-        @keyframes scroll {
-            from {
-                transform: translateX(100%);
-            }
-            to {
-                transform: translateX(-100%);
-            }
-        }
+        
          
         /* Deals Section */
         .deals-section {
@@ -309,7 +324,6 @@ body {
         .deal-item button:hover {
             background-color: #e68900;
         }
-=======
 /* Header */
 header {
     display: flex;
@@ -397,7 +411,6 @@ header nav a:hover {
     background-color: #f9f9f9; /* Optional background */
     margin-top: -20px; /* Adjusted to reduce space between header and banner */
 }
->>>>>>> 20983265264af55a8e532d0301e32fea96e3b57f
 
 /* Track that holds the slides */
 .banner-track {
@@ -405,7 +418,6 @@ header nav a:hover {
     animation: slide 30s linear infinite; /* 12s for smooth loop */
 }
 
-<<<<<<< HEAD
         /* Footer */
         footer {
             background-color: #1a1a1a;
@@ -436,7 +448,6 @@ header nav a:hover {
             display:flex;
 
         }
-=======
 /* Individual slides */
 .banner-slide {
     position: relative;
@@ -634,4 +645,3 @@ footer {
 .footer-section a:hover {
     color: #fff;
 }
->>>>>>> 20983265264af55a8e532d0301e32fea96e3b57f
