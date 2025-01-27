@@ -15,6 +15,7 @@ body {
     border-radius: 30px;
     padding: 5px 10px;
 }
+
 .search-bar input {
     border: yellow;
     outline: yellow;
@@ -34,7 +35,7 @@ body {
     background-color: #e68900;
 }
 
-/* Attractive Search Bar */
+        /* Attractive Search Bar */
 .search-container {
     display: flex;
     align-items: center;
@@ -84,14 +85,14 @@ body {
     transform: scale(0.95);
 }
 
-/* Header */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 50px;
-    background-color: #1a1a1a;
-    }
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: #1a1a1a;
+        }
         .logo {
             max-width: 200px; 
             max-height: 300px; 
@@ -115,7 +116,8 @@ header {
             color: #fff;
         }
         .navbar {
-            
+            background-color: rgba(0, 0, 0, 0.2);
+            position: sticky;
             padding: 10px;
             text-align: center;
         }
@@ -125,7 +127,7 @@ header {
             margin: 0;
             padding: 0;
             display: inline-flex;
-            gap: 20px; 
+            gap: 20px; /* Adds spacing between items */
         }
         
         .nav-list li {
@@ -143,43 +145,6 @@ header {
             text-decoration: underline;
         }
 
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            background-image: url('/image/vintronics-background.jpg');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-            padding: 0 50px;
-            color: #fff;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-        }
-        .hero h1 {
-            font-size: 4em;
-            font-weight: bold;
-            margin: 0;
-        }
-        .hero p {
-            font-size: 1.2em;
-            margin: 20px 0;
-        }
-        .hero button {
-            background-color: #ff9800;
-            border: none;
-            padding: 15px 30px;
-            font-size: 1em;
-            color: #fff;
-            font-weight: bold;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-        .hero button:hover {
-            background-color: #e68900;
-        }
         /* Scrolled Banner */
         .banner {
             overflow: hidden;
@@ -199,7 +164,7 @@ header {
             font-size: 1.2em;
         }
 
-/* Container to hold the banner */
+        /* Container to hold the banner */
         .banner-container {
             width: 100%; 
             overflow: hidden; 
@@ -208,13 +173,13 @@ header {
             background-color: #f9f9f9; 
         }
         
-/* Track that holds the slides */
+        /* Track that holds the slides */
         .banner-track {
             display: flex;
             animation: slide 30s linear infinite;
         }
         
- /* Individual slides */
+        /* Individual slides */
         .banner-slide {
             position: relative;
             min-width: 100%; 
@@ -227,7 +192,7 @@ header {
             object-fit: cover; 
         }
         
-/* Discount badge */
+        /* Discount badge */
         .discount-badge {
             position: absolute;
             top: 10px;
@@ -241,7 +206,7 @@ header {
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
         
-/* Keyframes for the sliding animation */
+        /* Keyframes for the sliding animation */
         @keyframes slide {
             0% {
             transform: translateX(0); /* Start at the first slide */
@@ -257,7 +222,9 @@ header {
             }
         }
 
-/* Deals Section */
+        
+         
+        /* Deals Section */
         .deals-section {
             background-color: #121212;
             color: #fff;
@@ -321,7 +288,6 @@ header {
         .deal-item button:hover {
             background-color: #e68900;
         }
-
 /* Header */
 header {
     display: flex;
@@ -329,7 +295,7 @@ header {
     align-items: center;
     padding: 20px 50px;
     background-color: #3E2723;
-    margin-bottom: 0; 
+    margin-bottom: 0; /* Removed margin to reduce space below the header */
 }
 .logo {
     max-width: 150px;
@@ -362,26 +328,59 @@ header nav a:hover {
 }
 
 /* Hero Section */
+.hero {
+    height: 70vh;
+    background-image: url('image/vintronics-background.jpg');
+    background-size: cover;
+    background-position: center;
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0px;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    margin-top: 0; /* Removed top margin to reduce space */
+    overflow: hidden;
+}
+/* hero video */
+.herobackground-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+hero-content{
+    position: relative;
+    z-index: 1; /* Ensure it stays above the video */
+    color: white;
+    text-align: center;
+}
 
 .hero h1 {
-    font-size: 4em;
+    font-size: 3.5rem;
     font-weight: bold;
     margin: 0;
 }
 .hero p {
-    font-size: 1.2em;
-    margin: 20px 0;
+    font-size: 1.2rem;
+    margin: 10px;
 }
 .hero button {
     background-color: #ff9800;
     border: none;
-    padding: 15px 30px;
-    font-size: 1em;
+    padding: 10px 20px;
+    font-size: 1rem;
     color: #fff;
     font-weight: bold;
     cursor: pointer;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+    margin-top:15px;
 }
 .hero button:hover {
     background-color: #e68900;
@@ -389,21 +388,21 @@ header nav a:hover {
 
 /* Container to hold the banner */
 .banner-container {
-    width: 100%; 
-    overflow: hidden; 
+    width: 100%; /* Full-width container */
+    overflow: hidden; /* Hide overflowing content */
     position: relative;
-    height: 250px; 
-    background-color: #f9f9f9; 
-    margin-top: -20px; 
+    height: 250px; /* Adjust height as needed */
+    background-color: #f9f9f9; /* Optional background */
+    margin-top: -20px; /* Adjusted to reduce space between header and banner */
 }
 
 /* Track that holds the slides */
 .banner-track {
     display: flex;
-    animation: slide 30s linear infinite; 
+    animation: slide 30s linear infinite; /* 12s for smooth loop */
 }
 
-/* Footer */
+        /* Footer */
         footer {
             background-color: #1a1a1a;
             padding: 30px 50px;
@@ -436,14 +435,14 @@ header nav a:hover {
 /* Individual slides */
 .banner-slide {
     position: relative;
-    min-width: 100%; 
-    height: 100%; 
+    min-width: 100%; /* Each slide takes the full width of the container */
+    height: 100%; /* Full height of the container */
 }
 
 .banner-slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Ensures the image fits nicely */
 }
 
 /* Discount badge */
@@ -463,16 +462,16 @@ header nav a:hover {
 /* Keyframes for the sliding animation */
 @keyframes slide {
     0% {
-        transform: translateX(0); 
+        transform: translateX(0); /* Start at the first slide */
     }
     33.33% {
-        transform: translateX(-100%); 
+        transform: translateX(-100%); /* Move to the second slide */
     }
     66.66% {
-        transform: translateX(-200%); 
+        transform: translateX(-200%); /* Move to the third slide */
     }
     100% {
-        transform: translateX(0); 
+        transform: translateX(0); /* Loop back to the first slide */
     }
 }
 
@@ -571,17 +570,17 @@ header nav a:hover {
 
 .container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-    gap: 20px; 
-    align-items: center; 
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Dynamic column size */
+    gap: 20px; /* Space between items */
+    align-items: center; /* Align items vertically */
   }
   
   .card {
-    text-align: center; 
+    text-align: center; /* Center-align text within each card */
   }
   .card img {
-    width: 100%; 
-    height: auto; 
+    width: 100%; /* Make images fill the card width */
+    height: auto; /* Maintain aspect ratio */
     object-fit: cover; /* Adjust cropping if necessary */
   }
     
@@ -646,5 +645,3 @@ footer {
 .footer-section a:hover {
     color: #fff;
 }
-
-
