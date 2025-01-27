@@ -287,8 +287,8 @@ body {
             width: 250px;
         }
         .deal-item img {
-            width: 100%;
-            height: auto;
+            width: 250px;
+            height: 250px;
             border-radius: 10px;
         }
         .deal-item h3 {
@@ -584,6 +584,22 @@ header nav a:hover {
     background-color: #e68900;
 }
 
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Dynamic column size */
+    gap: 20px; /* Space between items */
+    align-items: center; /* Align items vertically */
+  }
+  
+  .card {
+    text-align: center; /* Center-align text within each card */
+  }
+  .card img {
+    width: 100%; /* Make images fill the card width */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Adjust cropping if necessary */
+  }
+    
 /* Featured Products */
 .featured {
     padding: 50px;
