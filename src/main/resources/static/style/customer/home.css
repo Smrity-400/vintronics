@@ -34,7 +34,7 @@ body {
     background-color: #e68900;
 }
 
-        /* Attractive Search Bar */
+/* Attractive Search Bar */
 .search-container {
     display: flex;
     align-items: center;
@@ -84,14 +84,14 @@ body {
     transform: scale(0.95);
 }
 
-        /* Header */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 50px;
-            background-color: #1a1a1a;
-        }
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #1a1a1a;
+    }
         .logo {
             max-width: 200px; 
             max-height: 300px; 
@@ -125,7 +125,7 @@ body {
             margin: 0;
             padding: 0;
             display: inline-flex;
-            gap: 20px; /* Adds spacing between items */
+            gap: 20px; 
         }
         
         .nav-list li {
@@ -199,8 +199,7 @@ body {
             font-size: 1.2em;
         }
 
-        
-        /* Container to hold the banner */
+/* Container to hold the banner */
         .banner-container {
             width: 100%; 
             overflow: hidden; 
@@ -209,13 +208,13 @@ body {
             background-color: #f9f9f9; 
         }
         
-        /* Track that holds the slides */
+/* Track that holds the slides */
         .banner-track {
             display: flex;
             animation: slide 30s linear infinite;
         }
         
-        /* Individual slides */
+ /* Individual slides */
         .banner-slide {
             position: relative;
             min-width: 100%; 
@@ -228,7 +227,7 @@ body {
             object-fit: cover; 
         }
         
-        /* Discount badge */
+/* Discount badge */
         .discount-badge {
             position: absolute;
             top: 10px;
@@ -242,7 +241,7 @@ body {
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
         
-        /* Keyframes for the sliding animation */
+/* Keyframes for the sliding animation */
         @keyframes slide {
             0% {
             transform: translateX(0); /* Start at the first slide */
@@ -258,9 +257,7 @@ body {
             }
         }
 
-        
-         
-        /* Deals Section */
+/* Deals Section */
         .deals-section {
             background-color: #121212;
             color: #fff;
@@ -324,6 +321,7 @@ body {
         .deal-item button:hover {
             background-color: #e68900;
         }
+
 /* Header */
 header {
     display: flex;
@@ -331,7 +329,7 @@ header {
     align-items: center;
     padding: 20px 50px;
     background-color: #3E2723;
-    margin-bottom: 0; /* Removed margin to reduce space below the header */
+    margin-bottom: 0; 
 }
 .logo {
     max-width: 150px;
@@ -364,20 +362,7 @@ header nav a:hover {
 }
 
 /* Hero Section */
-.hero {
-    height: 100vh;
-    background-image: url('/image/vintronics-background.jpg');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 0 50px;
-    color: #fff;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-    margin-top: 0; /* Removed top margin to reduce space */
-}
+
 .hero h1 {
     font-size: 4em;
     font-weight: bold;
@@ -404,21 +389,21 @@ header nav a:hover {
 
 /* Container to hold the banner */
 .banner-container {
-    width: 100%; /* Full-width container */
-    overflow: hidden; /* Hide overflowing content */
+    width: 100%; 
+    overflow: hidden; 
     position: relative;
-    height: 250px; /* Adjust height as needed */
-    background-color: #f9f9f9; /* Optional background */
-    margin-top: -20px; /* Adjusted to reduce space between header and banner */
+    height: 250px; 
+    background-color: #f9f9f9; 
+    margin-top: -20px; 
 }
 
 /* Track that holds the slides */
 .banner-track {
     display: flex;
-    animation: slide 30s linear infinite; /* 12s for smooth loop */
+    animation: slide 30s linear infinite; 
 }
 
-        /* Footer */
+/* Footer */
         footer {
             background-color: #1a1a1a;
             padding: 30px 50px;
@@ -451,14 +436,14 @@ header nav a:hover {
 /* Individual slides */
 .banner-slide {
     position: relative;
-    min-width: 100%; /* Each slide takes the full width of the container */
-    height: 100%; /* Full height of the container */
+    min-width: 100%; 
+    height: 100%; 
 }
 
 .banner-slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures the image fits nicely */
+    object-fit: cover;
 }
 
 /* Discount badge */
@@ -478,16 +463,16 @@ header nav a:hover {
 /* Keyframes for the sliding animation */
 @keyframes slide {
     0% {
-        transform: translateX(0); /* Start at the first slide */
+        transform: translateX(0); 
     }
     33.33% {
-        transform: translateX(-100%); /* Move to the second slide */
+        transform: translateX(-100%); 
     }
     66.66% {
-        transform: translateX(-200%); /* Move to the third slide */
+        transform: translateX(-200%); 
     }
     100% {
-        transform: translateX(0); /* Loop back to the first slide */
+        transform: translateX(0); 
     }
 }
 
@@ -586,17 +571,17 @@ header nav a:hover {
 
 .container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Dynamic column size */
-    gap: 20px; /* Space between items */
-    align-items: center; /* Align items vertically */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 20px; 
+    align-items: center; 
   }
   
   .card {
-    text-align: center; /* Center-align text within each card */
+    text-align: center; 
   }
   .card img {
-    width: 100%; /* Make images fill the card width */
-    height: auto; /* Maintain aspect ratio */
+    width: 100%; 
+    height: auto; 
     object-fit: cover; /* Adjust cropping if necessary */
   }
     
@@ -661,3 +646,5 @@ footer {
 .footer-section a:hover {
     color: #fff;
 }
+
+
