@@ -7,35 +7,7 @@ body {
     color: #fff;
 }
 
-/* Search Bar */
-.search-bar {
-    display: flex;
-    align-items: center;
-    background-color: #fff;
-    border-radius: 30px;
-    padding: 5px 10px;
-}
-
-.search-bar input {
-    border: yellow;
-    outline: yellow;
-    padding: 5px;
-    font-size: 1.5em;
-}
-.search-bar button {
-    background-color: #ff9800;
-    border: none;
-    padding: 5px 15px;
-    color: #fff;
-    font-size: 1em;
-    border-radius: 20px;
-    cursor: pointer;
-}
-.search-bar button:hover {
-    background-color: #e68900;
-}
-
-        /* Attractive Search Bar */
+/* Attractive Search Bar */
 .search-container {
     display: flex;
     align-items: center;
@@ -85,7 +57,7 @@ body {
     transform: scale(0.95);
 }
 
-        /* Header */
+/* Header */
         header {
             display: flex;
             justify-content: space-between;
@@ -127,7 +99,7 @@ body {
             margin: 0;
             padding: 0;
             display: inline-flex;
-            gap: 20px; /* Adds spacing between items */
+            gap: 20px; 
         }
         
         .nav-list li {
@@ -209,16 +181,16 @@ body {
         /* Keyframes for the sliding animation */
         @keyframes slide {
             0% {
-            transform: translateX(0); /* Start at the first slide */
+            transform: translateX(0); 
             }
             33.33% {
-            transform: translateX(-100%); /* Move to the second slide */
+            transform: translateX(-100%); 
             }
             66.66% {
-            transform: translateX(-200%); /* Move to the third slide */
+            transform: translateX(-200%); 
             }
             100% {
-            transform: translateX(0); /* Loop back to the first slide */
+            transform: translateX(0); 
             }
         }
 
@@ -295,7 +267,7 @@ header {
     align-items: center;
     padding: 20px 50px;
     background-color: #3E2723;
-    margin-bottom: 0; /* Removed margin to reduce space below the header */
+    margin-bottom: 0; 
 }
 .logo {
     max-width: 150px;
@@ -330,7 +302,6 @@ header nav a:hover {
 /* Hero Section */
 .hero {
     height: 70vh;
-    background-image: url('image/vintronics-background.jpg');
     background-size: cover;
     background-position: center;
     position:relative;
@@ -341,7 +312,7 @@ header nav a:hover {
     padding: 0px;
     color: #fff;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-    margin-top: 0; /* Removed top margin to reduce space */
+    margin-top: 0; 
     overflow: hidden;
 }
 /* hero video */
@@ -356,7 +327,7 @@ header nav a:hover {
 }
 hero-content{
     position: relative;
-    z-index: 1; /* Ensure it stays above the video */
+    z-index: 1; 
     color: white;
     text-align: center;
 }
@@ -388,18 +359,18 @@ hero-content{
 
 /* Container to hold the banner */
 .banner-container {
-    width: 100%; /* Full-width container */
-    overflow: hidden; /* Hide overflowing content */
+    width: 100%; 
+    overflow: hidden; 
     position: relative;
-    height: 250px; /* Adjust height as needed */
-    background-color: #f9f9f9; /* Optional background */
-    margin-top: -20px; /* Adjusted to reduce space between header and banner */
+    height: 250px; 
+    background-color: #f9f9f9; 
+    margin-top: -20px; 
 }
 
 /* Track that holds the slides */
 .banner-track {
     display: flex;
-    animation: slide 30s linear infinite; /* 12s for smooth loop */
+    animation: slide 30s linear infinite; 
 }
 
         /* Footer */
@@ -435,7 +406,7 @@ hero-content{
 /* Individual slides */
 .banner-slide {
     position: relative;
-    min-width: 100%; /* Each slide takes the full width of the container */
+    min-width: 100%; 
     height: 100%; /* Full height of the container */
 }
 
