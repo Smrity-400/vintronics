@@ -99,6 +99,7 @@ body {
             margin: 0;
             padding: 0;
             display: inline-flex;
+            font-family: sans-serif;
             gap: 20px; 
         }
         
@@ -116,6 +117,46 @@ body {
         .nav-list a:hover {
             text-decoration: underline;
         }
+        .hamburger {
+            width: 20px;
+            height: 2px;
+            background-color: white;
+            position: relative;
+            margin-right: 8px;
+          }
+          
+          .hamburger::before,
+          .hamburger::after {
+            content: '';
+            width: 20px;
+            height: 2px;
+            background-color: white;
+            position: absolute;
+            left: 0;
+          }
+          
+          .hamburger::before {
+            top: -6px;
+          }
+          
+          .hamburger::after {
+            top: 6px;
+          }
+          
+          /* Menu Label */
+          .menu-label {
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+          }
+          
+          /* Hover Effects */
+          .menu-icon:hover .hamburger,
+          .menu-icon:hover .menu-label {
+            color: #ffcc00; /* Highlight color */
+            background-color: #ffcc00; /* Change hamburger bar color */
+          }
+        
 
         /* Scrolled Banner */
         .banner {
@@ -589,6 +630,7 @@ hero-content{
 .product-card p {
     color: #ccc;
 }
+
 
 /* Footer */
 footer {
