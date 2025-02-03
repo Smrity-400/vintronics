@@ -130,43 +130,6 @@ header nav a:hover {
     cursor: pointer;
 }
 
-.hamburger {
-    width: 20px;
-    height: 2px;
-    background-color: white;
-    position: relative;
-    margin-right: 8px;
-}
-
-.hamburger::before,
-.hamburger::after {
-    content: '';
-    width: 20px;
-    height: 2px;
-    background-color: white;
-    position: absolute;
-    left: 0;
-}
-
-.hamburger::before {
-    top: -6px;
-}
-
-.hamburger::after {
-    top: 6px;
-}
-
-.menu-label {
-    font-size: 16px;
-    font-weight: bold;
-    color: white;
-}
-
-.menu-icon:hover .hamburger,
-.menu-icon:hover .menu-label {
-    color: #f00;
-}
-
 /* Hero Section */
 .hero {
     position: relative;
@@ -388,8 +351,8 @@ header nav a:hover {
     background: linear-gradient(to right, #1a1a1a, #333333);
     color: #fff;
     background: url('/image/bg.jpg');
-     background-size: cover; /* Make the background image cover the entire section */
-    text-align: center; /* Center all text in the spotlight */
+    background-size: cover; 
+    text-align: center; 
 }
 
 /* Spotlight Heading */
@@ -403,20 +366,19 @@ header nav a:hover {
 .quote {
     font-size: 1.3em;
     font-style: italic;
-    color: #ffcc00; /* Retro Yellow */
+    color: #ffcc00;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     font-family: 'Times New Roman', serif;
     margin-bottom: 20px;
-    display: inline-block; /* Center the quote */
+    display: inline-block; 
 }
 
 /* Product Grid */
 .product-grid {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
     flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 20px;
 }
 
 /* Product Card */
@@ -471,7 +433,7 @@ header nav a:hover {
     box-shadow: 0px 5px 15px rgba(255, 106, 0, 0.7);
 }
  
-        /* Deals Section */
+/* Deals Section */
         .deals-section {
             background-color: #121212;
             color: #fff;
@@ -671,37 +633,7 @@ hero-content{
     display: flex;
     animation: slide 30s linear infinite; 
 }
-
-        /* Footer */
-        footer {
-            background-color: #1a1a1a;
-            padding: 30px 50px;
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            color: #ccc;
-        }
-        .footer-section {
-            flex: 1;
-            margin: 20px;
-        }
-        .footer-section h3 {
-            color: #ff9800;
-            margin-bottom: 15px;
-        }
-        .footer-section a {
-            text-decoration: none;
-            color: #ccc;
-            display: block;
-            margin: 5px 0;
-        }
-        .footer-section a:hover {
-            color: #fff;
-        }
-        .nav-1 {
-            display:flex;
-
-        }
+        
 /* Individual slides */
 .banner-slide {
     position: relative;
@@ -864,7 +796,7 @@ hero-content{
     color: #ff9800;
     margin-bottom: 20px;
 }
-.product-grid {
+.featured-product .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 10px;
@@ -889,30 +821,107 @@ hero-content{
     color: #ccc;
 }
 
-
 /* Footer */
-footer {
-    background-color: #3E2723;
-    padding: 20px 40px;
+.footer {
+    background-color: #333;
+    color: #ffcc00;
+    padding: 20px 0;
+    text-align: center;
+    background: url('/image/vintronics-background.jpg');
+  }
+.logo{
+    width: 200px;
+    margin-bottom: 0;
+    margin-left: auto;
+}
+  
+  .footer-container {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
-    color: #ccc;
-}
-.footer-section {
-    flex: 1;
-    margin: 15px;
-}
-.footer-section h3 {
-    color: #ff9800;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-section {
+    flex: 1 1 200px;
+    margin: 10px;
+  }
+  
+  .footer-section h2,
+  .footer-section h3 {
+    font-size: 1.5em;
     margin-bottom: 10px;
-}
-.footer-section a {
+  }
+  
+  .footer-section p {
+    margin-bottom: 10px;
+  }
+  
+  .social-links a {
+    display: inline-block;
+    margin: 0 10px;
+    color: white;
     text-decoration: none;
-    color: #ccc;
-    display: block;
+  }
+  
+  .social-links a:hover {
+    color: #1a1a1a;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  .footer-sections li{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    gap: 10px;
+  }
+  
+  .footer-section ul li {
     margin: 5px 0;
-}
-.footer-section a:hover {
-    color: #fff;
-}
+  }
+  
+  .footer-section ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .footer-section ul li a:hover {
+    color: #1a1a1a;
+  }
+  
+  .footer-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .footer-section input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .footer-section button {
+    background-color: #1b0708;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .footer-section button:hover {
+    background-color: #ff4500;
+  }
+  
+  .footer-section img {
+    max-width: 150px;
+    height: fit-content;
+    border-radius: 10px;
+  }
