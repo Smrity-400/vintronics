@@ -561,7 +561,7 @@ header nav a:hover {
 
 /* Hero Section */
 .hero {
-    height: 70vh;
+    height: 80vh;
     background-size: cover;
     background-position: center;
     position:relative;
