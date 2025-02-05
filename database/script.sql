@@ -127,4 +127,5 @@ CREATE TABLE payment (
     updated_by INT,
     CONSTRAINT fk_payment_order FOREIGN KEY (order_id) REFERENCES order(order_id) ON DELETE CASCADE
 );
+CREATE TABLE rujh
 
