@@ -10,12 +10,12 @@
 </head>
 <body class="bg-gray-100 flex justify-center items-center h-screen">
 
-    <!-- Header -->
+<!-- Header -->
     <header>
         <div class="container">
         <div class="logo">
             <nav>
-            <img src= "/image/v2-logo.JPG" alt="Logo" class="logo">
+            <img src= "/image/v2-logo.png" alt="Logo" class="logo">
             </nav>
         </div>
         </div>
@@ -23,20 +23,36 @@
             <input type="text" placeholder="Search for gadgets...">
             <button>Search</button>
         </div>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+      
+        <div class="side-panel" id="sidePanel">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Wishlist</a></li>
+            <li><a href="#">All Categories </a></li>
+            <li><a href="#">Your Orders</a></li>
+            <li><a href="#">Your Address</a></li>
+            <li><a href="#">Your Account</a></li>
+            <li><a href="#">Become a Seller</a></li>
+            <li><a href="#">Our Services</a></li>
+            <li><a href="#">Sign In</a></li>
+            <li><a href="#">Sign Out</a></li>
+          </ul>
+        </div>
         <nav class="navbar">
             <ul class="nav-list">
-            <li><a href="#"><i class="fa-solid fa-user"></i>Login</a></li>
-            <li><a href="#"><i class="fa-solid fa-cart-shopping"></i>Cart</a></li>
-            <li><a href="#"><i class="fa-solid fa-phone-volume"></i>Contact Us</a></li>
+            <li><a href="#"><i class="fa-solid fa-user"></i> Login</a></li>
+            <li><a href="#"><i class="fa-solid fa-cart-shopping"></i> Cart</a></li>
+            <li><a href="#"><i class="fa-solid fa-phone-volume"></i> Contact Us</a></li>
             </ul>
         </nav>
-        <div class="menu-icon">
-            <div class="hamburger"></div>
-            <span class="menu-label"></span>
-        </div>
-    </header>
+        </header>
       
-    <!-- Hero Section -->
+<!-- Hero Section -->
     <section class="hero">
         <video class="herobackground-video" autoplay loop muted>
             <source src="/video/background-video.mp4">
@@ -48,40 +64,57 @@
         </div>
     </section>
 
-    <!-- Scrolled Banner -->
-    <!--div class="banner" -->
-        <!--div class="banner-content">
-          <span>Classic Radios</span>
-          <span>Vintage Calculators</span>
-          <span>Retro Game Consoles</span>
-          <span>Timeless Telephones</span>
-          <span>Antique Wall Clock</span>
-          <span>Audio Equipments</span>
-          <span>Retro Camera</span>
-          <span>Antique Television</span>
+    <nav class="navbar">
+        <ul class="nav-lists">
+            <li class="nav-item">Home</li>
+            <li class="nav-item">Exclusive Vintage Finds </li>
+            <li class="nav-item">Best Sellers</li>
+            <li class="nav-item">Today's Deals</li>
+            <li class="nav-item">About Us</li>
+            <li class="nav-item">New Releases</li>
+            <li class="nav-item">Limited Edition</li>
+            <li class="nav-item">Deals</li>
+            <li class="nav-item">Blog</li>
+            <li class="nav-item">FAQs</li>
+        </ul>
+    </nav>
+
+<!-- Carousel Section -->
+<div class="carousel-container">
+    <!-- Carousel Wrapper -->
+    <div id="carousel" class="carousel">
+      <!-- Slide 1 -->
+      <div class="slide">
+        <img src="/image/banner.jpg" alt="Retro Gadget 1" class="image">
+        <div class="overlay">
+          <h2 class="overlay-text">Explore the Best Retro Radios</h2>
         </div>
       </div>
-    <div class="banner-container">
-        <div class="banner-track">
-          <!-- Slide 1 -->
-          <!--div class="banner-slide">
-            <img src="/image/Retro-radio.jpg" alt="radio" class="radio">
-            <div class="discount-badge">50% OFF</div>
-          </div>
-          <!-- Slide 2 -->
-          <!--div class="banner-slide">
-            <img src="/image/wall-clock2.jpg" alt="radio" class="radio">
-            <div class="discount-badge">Buy 1 Get 1 Free</div>
-          </div>
-          <!-- Slide 3 -->
-          <!--div class="banner-slide">
-            <img src="/image/rotary-phone.jpg" alt="phone" class="phone">
-            <div class="discount-badge">30% OFF</div>
-          </div>
+
+      <!-- Slide 2 -->
+      <div class="slide">
+        <img src="/image/banner1.jpeg" alt="Retro Gadget 2" class="image">
+        <div class="overlay">
+          <h2 class="overlay-text">Vintage Gaming Console for Collectors</h2>
         </div>
       </div>
-      
-        <!-- New Arrivals Section -->
+
+      <!-- Slide 3 -->
+      <div class="slide">
+        <img src="/image/banner2.jpeg" alt="Retro Gadget 3" class="image">
+        <div class="overlay">
+          <h2 class="overlay-text">Classic Vintage camera</h2>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <button id="prev" class="button prev">&larr;</button>
+    <button id="next" class="button next">&rarr;</button>
+  </div>
+</div>
+
+<!-- New Arrivals Section -->
     <section class="new-arrivals">
     <h2>New Arrivals</h2>
     <div class="arrivals-container">
@@ -119,29 +152,34 @@
     </div>
     </section>
 
+<!--spotlight-->
     <section class="spotlight">
         <h1>Spotlight On</h1>
-        <p class="quote"><b>"Bringing back the classics—because vintage never goes out of style!"</b></p>
-        
-        <div class="product-grid">
+        <p class="quote">
+            <b>"Bringing back the classics—because vintage never goes out of style!"</b>
+        </p>
+    <div class="product-grid">
             <div class="product-card">
                 <img src="/image/camera1.jpg" alt="Retro Camera">
                 <h3>Retro Camera</h3>
                 <p>Capture moments the vintage way!</p>
                 <button class="shop-btn">Shop Now</button>
             </div>
+
             <div class="product-card">
                 <img src="/image/clock2.jpg" alt="Retro Gaming Console">
                 <h3>Antique Clock</h3>
                 <p>Golden era of Time!</p>
                 <button class="shop-btn">Shop Now</button>
             </div>
+
             <div class="product-card">
                 <img src="/image/speaker.jpg" alt="Classic Speaker">
                 <h3>Classic Speaker</h3>
                 <p>Enjoy music with a nostalgic touch!</p>
                 <button class="shop-btn">Shop Now</button>
             </div>
+
             <div class="product-card">
                 <img src="/image/audio-equipment.jpg" alt="Classic Speaker">
                 <h3>Retro Audio Equipment</h3>
@@ -151,26 +189,28 @@
         </div>
     </section>
 
-    <!-- Deals Section -->
+<!-- Deals Section -->
     <section class="deals-section">
         <h2>Exclusive Deals</h2>
         <div class="deals-container">
             <div class="deal-item">
-                <img src="/image/Retro-radio2.jpg" alt="radio" class="radio"> <!-- Replace with your image -->
+                <img src="/image/Retro-radio2.jpg" alt="radio" class="radio"> 
                 <h3>Retro Radio</h3>
                 <p><span class="original-price">Rs.5000</span> 
                     <span class="discounted-price">Rs.4000</span></p>
                 <p>20% Off</p>
                 <button>Shop Now</button>
             </div>
+
             <div class="deal-item">
-                <img src="/image/wall-clock2.jpg" alt="clock" class="clock"> <!-- Replace with your image -->
+                <img src="/image/wall-clock2.jpg" alt="clock" class="clock"> 
                 <h3>Vintage Wall Clocks</h3>
                 <p><span class="original-price">Rs.3000</span> 
                     <span class="discounted-price">Rs.2400</span></p>
                 <p>20% Off</p>
                 <button>Shop Now</button>
             </div>
+
             <div class="deal-item">
                 <img src="/image/playstation1.jpg" alt="playstation1" class="playstation1"> <!-- Replace with your image -->
                 <h3>Retro Console</h3>
@@ -179,6 +219,7 @@
                 <p>20% Off</p>
                 <button>Shop Now</button>
             </div>
+
             <div class="deal-item">
                 <img src="/image/rotary-phone1.jpg" alt="phone" class="phone"> <!-- Replace with your image -->
                 <h3>Rotary phone</h3>
@@ -187,6 +228,7 @@
                 <p>20% Off</p>
                 <button>Shop Now</button>
             </div>
+
             <div class="deal-item">
                 <img src="/image/recordplayer.jpg" alt="recordplayer" class="recordplayer"> <!-- Replace with your image -->
                 <h3>Record Players</h3>
@@ -195,6 +237,7 @@
                 <p>40% Off</p>
                 <button>Shop Now</button>
             </div>
+
             <div class="deal-item">
                 <img src="/image/retro-typewriter1.jpg" alt="typewriter" class="typewriter"> <!-- Replace with your image -->
                 <h3>Retro camera</h3>
@@ -203,6 +246,7 @@
                 <p>20% Off</p>
                 <button>Shop Now</button>
             </div>
+
             <div class="deal-item">
                 <img src="/image/rotary-phone2.jpg" alt="phone" class="phone"> <!-- Replace with your image -->
                 <h3>Gramophone</h3>
@@ -211,6 +255,7 @@
                 <p>20% Off</p>
                 <button>Shop Now</button>
             </div>
+
             <div class="deal-item">
                 <img src="/image/phone2.jpg" alt="phone" class="phone"> <!-- Replace with your image -->
                 <h3>Rotary Dial Telephone</h3>
@@ -222,63 +267,117 @@
         </div>
     </section>
 
-            <!-- Featured Products -->
-            <section class="featured">
-                <h2>Featured Products</h2>
-                <div class="product-grid">
-                    <div class="product-card">
-                        <img src="/image/camera1.jpg" alt="Classic Camera"> 
-                        <h3>Classic Camera</h3>
-                        <p>Rs.5000/-</p>
-                    </div>
-                    <div class="product-card">
-                        <img src="/image/deskfan.jpg" alt="deskfan"> 
-                        <h3>Vintage Deskfans</h3>
-                        <p>Rs.3000/-</p>
-                    </div>
-                    <div class="product-card">
-                        <img src="/image/audio-equipment.jpg" alt="Audio Equipments"> 
-                        <h3>Audio Equipments</h3>
-                        <p>Rs.6000/-</p>
-                        </div>
-                        <div class="product-card">
-                            <img src="/image/speaker.jpg" alt="speaker"> 
-                            <h3>Speaker</h3>
-                            <p>Rs.5000/-</p>
-                        </div>
-                    <div class="product-card">
-                            <img src="/image/Lamp2.jpg" alt="lamp"> 
-                            <h3>Vintage Lamps</h3>
-                            <p>Rs.3000/-</p>
-                        </div>
+<!-- Featured Products -->
+    <section class="featured">
+        <h2>Featured Products</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="/image/camera1.jpg" alt="Classic Camera"> 
+                    <h3>Classic Camera</h3>
+                    <p>Rs.5000/-</p>
                 </div>
-            </section>
 
-            <!-- Footer -->
-            <footer>
-                <div class="footer-section">
-                    <h3>Fast Shipping</h3>
-                    <a href="#">Need Help?</a>
-                    <a href="#">FAQ's</a>
-                    <a href="#">Contact Us</a>
-                    
-                </div>
-                <div class="footer-section">
-                    <h3>Easy Returns</h3>
-                    <a href="#">Privacy Info</a>
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms Of Use</a>
-                    <a href="#">Returns And Cancellation Policy</a>
-                </div>
-                <div class="footer-section">
-                    <h3>Secure Payment</h3>
-                    <a href="#">Connect with us</a>
-                    
-                
-                </div>
-                <div class="footer-section">
-                    <h3>Authentic Products</h3>
-                </div>
-            </footer>
-        </body>
-        </html>
+            <div class="product-card">
+                    <img src="/image/deskfan.jpg" alt="deskfan"> 
+                    <h3>Vintage Deskfans</h3>
+                    <p>Rs.3000/-</p>
+            </div>
+
+            <div class="product-card">
+                    <img src="/image/audio-equipment.jpg" alt="Audio Equipments"> 
+                    <h3>Audio Equipments</h3>
+                    <p>Rs.6000/-</p>
+            </div>
+
+            <div class="product-card">
+                    <img src="/image/speaker.jpg" alt="speaker"> 
+                    <h3>Speaker</h3>
+                    <p>Rs.5000/-</p>
+            </div>
+
+            <div class="product-card">
+                    <img src="/image/Lamp2.jpg" alt="lamp"> 
+                    <h3>Vintage Lamps</h3>
+                    <p>Rs.3000/-</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="footer-highlights">
+        <div class="highlight-item">
+          <a href="#" style="font-size: 34px;"><i class="fa-solid fa-truck-fast"></i></a>
+          <h4>FAST SHIPPING</h4>
+          <p>On All Orders </p>
+        </div>
+        <div class="highlight-item">
+            <a href="#" style="font-size: 34px;"><i class="fa-solid fa-clock-rotate-left"></i></a>
+          <h4>EASY RETURNS</h4>
+          <p>15-Day Return Policy</p>
+        </div>
+        <div class="highlight-item">
+            <a href="#" style="font-size: 34px;"><i class="fa-solid fa-hands-holding-circle"></i></a>
+          <h4>AUTHENTIC PRODUCTS</h4>
+          <p>Products Sourced Directly</p>
+        </div>
+        <div class="highlight-item">
+            <a href="#" style="font-size: 34px;"><i class="fa-solid fa-lock"></i></a>
+            <h4>SECURE PAYMENT</h4>
+            <p>100% Secure Payment</p>
+          </div>
+      </div>
+
+<!--footer-->
+            
+<footer class="footer">
+    <div class="footer-container">
+        <!-- Logo and Social Links -->
+        <div>
+            <img src="/image/v5-logo.png" alt="logo" class="logo">
+            <p><b>Welcome to Vintronics, your ultimate destination for vintage tech 
+                    and nostalgic treasures! Whether you're a collector, a tech enthusiast, or just 
+                    looking for a blast from the past, we bring you the charm of yesteryear with a modern touch. 
+                    Explore our handpicked selection and relive the golden era of innovation!🚀✨</b></p>
+        </div>
+        <div class="footer-section">
+            <h3>Show us some love ❤ on Social Media</h3>
+            <div class="social-links">
+                <a href="#" style="font-size: 34px;"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" style="font-size: 34px;"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" style="font-size: 34px;"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" style="font-size: 34px;"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+              
+<!-- Quick Links -->
+    <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Our Story</a></li>
+        <li><a href="#">Help Desk</a></li>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Our Policy</a></li>
+        <li><a href="#">Term and Conditions</a></li>
+        </ul>
+    </div>
+              
+<!-- Newsletter -->
+    <div class="footer-section">
+        <h3>Newsletter</h3>
+        <p>Sign up for the latest retro gadgets and deals!</p>
+        <form>
+            <input type="email" placeholder="Enter your email" />
+            <button type="submit">Subscribe</button>
+        </form>
+    </div>
+    </div>
+    
+<!-- Copyright Section -->
+     <div class="copyright">
+        <p><b>&copy; 2025 Vintronics.com , All rights reserved.</b></p>
+    </div>
+</footer>
+<script src="/js/home.js"></script>
+</body>
+</html>
