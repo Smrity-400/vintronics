@@ -11,26 +11,27 @@ CREATE TABLE category (
     created_date DATETIME DEFAULT CURRENT_TIMESTAMP, 
     updated_date DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     created_by VARCHAR(255),
-    updated_by VARCHAR(255), 
+    updated_by VARCHAR(255) 
 );
 
 CREATE TABLE product (
-    product_id  VARCHAR(255) PRIMARY KEY ,  
-    category_id VARCHAR(255) NOT NULL,
+    product_id VARCHAR(255) PRIMARY KEY,  
+    category_id VARCHAR(255), NOT NULL,
     seller_id INT NOT NULL,   
     product_title VARCHAR(255) NOT NULL,  
     product_description TEXT NULL,  
-    product_price DOUBLE NOT NULL CHECK (price >= 0), 
-    product_stock_quantity INT NOT NULL CHECK (stock_quantity >= 0),  
+    product_price DOUBLE NOT NULL CHECK (product_price >= 0), 
+    product_stock_quantity INT NOT NULL CHECK (product_stock_quantity >= 0),  
     product_image_url TEXT NOT NULL,  
     product_status ENUM('ACTIVE', 'INACTIVE') DEFAULT 'ACTIVE',  
     created_date DATETIME DEFAULT CURRENT_TIMESTAMP,  
     updated_date DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,  
     created_by VARCHAR(255),
     updated_by VARCHAR(255),
-    CONSTRAINT fk_category FOREIGN KEY (category_id) REFERENCES categorie(category_id) ON DELETE SET NULL,
+    CONSTRAINT fk_category FOREIGN KEY (category_id) REFERENCES category(category_id) ON DELETE SET NULL,
     CONSTRAINT fk_seller FOREIGN KEY (seller_id) REFERENCES user(user_id) ON DELETE CASCADE
 );
+
 
 CREATE TABLE user (
     user_id INT PRIMARY KEY AUTO_INCREMENT,
@@ -46,23 +47,24 @@ CREATE TABLE user (
     updated_by VARCHAR(255),
 );
 
-CREATE TABLE order (
+CREATE TABLE product_order (
     order_id VARCHAR(255) PRIMARY KEY,
     buyer_user_id INT NOT NULL,
     order_total_price DECIMAL(10,2) NOT NULL,
     order_status ENUM('PENDING', 'SHIPPED', 'DELIVERED', 'CANCELLED', 'CART') DEFAULT 'PENDING',
-    created_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    created_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP;
+    updated_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     created_by VARCHAR(255),
     updated_by VARCHAR(255),
     CONSTRAINT fk_user FOREIGN KEY (buyer_user_id) REFERENCES user(user_id) ON DELETE CASCADE
 );
 
+
 CREATE TABLE order_item (
     order_item_id VARCHAR(255) PRIMARY KEY,
     order_id VARCHAR(255) PRIMARY KEY,
     product_id VARCHAR(255) PRIMARY KEY,
-    order_item_quantity INT NOT NULL DEFAULT 1,
+    order_item_quantity INT NOT NULL DEFAULT 0,
     order_item_unit_price DECIMAL(10,2) NOT NULL,
     order_item_total_price DECIMAL(10,2) NOT NULL,
     order_item_status ENUM('ADDED', 'REMOVED') DEFAULT 'ADDED',
@@ -102,7 +104,7 @@ CREATE TABLE wishlist (
 
 CREATE TABLE payment (
     payment_id INT PRIMARY KEY AUTO_INCREMENT,
-    order_id VARCHAR(255) PRIMARY KEYL,
+    order_id VARCHAR(255) PRIMARY KEY,
     payment_method ENUM('CREDIT_CARD', 'DEBIT_CARD', 'PAYPAL', 'UPI', 'COD') NOT NULL,
     payment_status ENUM('PENDING', 'COMPLETED', 'FAILED') DEFAULT 'PENDING',
     transaction_id VARCHAR(255) UNIQUE,
