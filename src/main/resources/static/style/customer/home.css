@@ -99,6 +99,7 @@ header nav a:hover {
     text-align: center;
     background-color: transparent; 
     text-transform: capitalize;
+    z-index: 100;
 }
 
 .nav-list {
@@ -130,6 +131,56 @@ header nav a:hover {
     border: none;
     color: black;
 }
+
+* /Dropdown container */
+  .dropdown {
+      position: relative;
+      display: inline-block;
+      margin-left: 15px;
+  }
+
+  /* Dropdown button */
+  .dropdown button {
+      background-color: goldenrod;
+      padding: 10px 15px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+  }
+
+  /* Dropdown menu */
+  .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 180px;
+      border-radius: 5px;
+      z-index: 999;
+  }
+
+  /* Dropdown links */
+  .dropdown-content a {
+      color: black;
+      padding: 10px 15px;
+      text-decoration: none;
+      display: block;
+  }
+
+  /* Change background on hover */
+  .dropdown-content a:hover {
+      background-color: #f1f1f1;
+  }
+
+  /* Show dropdown on hover */
+  .dropdown:hover .dropdown-content {
+      display: block;
+  }
+
+  /* Hover effect for button */
+  .dropdown button:hover {
+      background-color: goldenrod;
+  }
 
 /* Hamburger Button */
 .hamburger {
@@ -288,6 +339,7 @@ header nav a:hover {
   .carousel-container {
     position: relative;
     overflow: hidden;
+    z-index: 1;
   }
   
   .carousel {

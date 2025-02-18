@@ -17,11 +17,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class HomeController {
     @Autowired
     private CategoryRepository categoryRepository;
-    @GetMapping({"/home", "/"})
-     String home(Model model) {
+
+    @GetMapping({ "/home", "/" })
+    String home(Model model) {
         List<Category> categories = categoryRepository.findAll();
         model.addAttribute("categories", categories);
         return "customer/home";
     }
-    
+
 }
