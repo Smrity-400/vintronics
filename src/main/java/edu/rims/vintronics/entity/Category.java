@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import edu.rims.vintronics.constant.CategoryStatus;
 
@@ -13,7 +14,7 @@ import edu.rims.vintronics.constant.CategoryStatus;
 @Getter
 @Setter
 public class Category extends Auditable {
-    
+
     @Id
     @Column(name = "category_id", nullable = false, length = 255)
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -32,20 +33,6 @@ public class Category extends Auditable {
     @Column(name = "category_status", columnDefinition = "ENUM('ACTIVE', 'INACTIVE') DEFAULT 'ACTIVE'")
     private CategoryStatus categoryStatus = CategoryStatus.ACTIVE;
 
-    @Column(name = "created_date", updatable = false)
-    private LocalDateTime createdDate = LocalDateTime.now();
-
-    @Column(name = "updated_date")
-    private LocalDateTime updatedDate = LocalDateTime.now();
-
-    @Column(name = "created_by", length = 255)
-    private String createdBy;
-
-    @Column(name = "updated_by", length = 255)
-    private String updatedBy;
-
-    @PreUpdate
-    public void preUpdate() {
-        this.updatedDate = LocalDateTime.now();
-    }
+    @OneToMany(mappedBy = "category")
+    private List<Product> products;
 }

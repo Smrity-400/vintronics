@@ -83,26 +83,29 @@ header {
     background-color: white;
 }
 
-header nav a {
+header nav1 a {
     margin: 0px;
     text-decoration: none;
     font-size: 1em;
 }
 
-header nav a:hover {
+header nav1 a:hover {
     color: #fff;
 }
 
-.navbar {
+.navbar1 {
     position: sticky;
-    padding: 10px;
+    padding: 10px 20px;
     text-align: center;
     background-color: transparent; 
     text-transform: capitalize;
-    z-index: 100;
+    z-index: 1000;
+    display: flex ;
+    top: 0;
+    left: 0;
 }
 
-.nav-list {
+.nav-list1 {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -111,11 +114,11 @@ header nav a:hover {
     gap: 20px;
 }
 
-.nav-list li {
+.nav-list1 li {
     display: inline;
 }
 
-.nav-list a {
+.nav-list1 a {
     color: white;
     text-decoration: none;
     font-size: 16px;
@@ -126,7 +129,7 @@ header nav a:hover {
     text-transform: capitalize;
     word-spacing: 3px;
 }
-.nav-list a:hover {
+.nav-list1 a:hover {
     background-color: goldenrod;
     border: none;
     color: black;
@@ -147,6 +150,12 @@ header nav a:hover {
       border: none;
       cursor: pointer;
       border-radius: 5px;
+  }
+  .dropdown button span i{
+    transition: transform .5s ease-in-out;
+  }
+  .dropdown button:hover span i{
+    transform: rotate(180deg);
   }
 
   /* Dropdown menu */
@@ -214,7 +223,7 @@ header nav a:hover {
     color: white;
     overflow: auto;
     transition: right 0.3s ease;
-    z-index: 9;
+    z-index: 1200;
   }
   
   .side-panel ul {
@@ -319,12 +328,16 @@ header nav a:hover {
     background-color: #ff9800; 
     border-radius: 4px;
 }
+.nav-item a {
+  text-decoration: none;  
+  color: inherit;         
+}
 
 /* Container Styling */
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    /* padding: 20px; */
   }
   
   /* Header Styling */

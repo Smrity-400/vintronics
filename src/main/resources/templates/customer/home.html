@@ -40,10 +40,12 @@
                 <li><a href="#">Your Account</a></li>
                 <li><a href="#">Become a Seller</a></li>
                 <li><a href="#">Our Services</a></li>
-                <li><a href="#">Sign In</a></li>
-                <li><a href="#">Sign Out</a></li>
             </ul>
         </div>
+
+        <nav class="navbar1">
+            <ul class="nav-list1">
+
         <nav class="navbar">
             <ul class="nav-list">
             <li><a href="#"><i class="fa-solid fa-user"></i> Login</a></li>
@@ -72,24 +74,24 @@
     <nav class="navbar">
         <ul class="nav-lists">
             <div class="dropdown">
-                <button>All Categories</button>
+                <button>All Categories <span><i class="fa-solid fa-angle-down"></i></span></button>
                 <div class="dropdown-content">
-                    <a th:each="category : ${categories}" 
+                    <a th:each="category : ${categories}"
                         data-th-href="|/customer/product?category=${category.categoryId}|"
                         th:text="${category.categoryTitle}">
                     </a>
                 </div>
             </div>
 
-            <li class="nav-item">Home</li>
-            <li class="nav-item">Exclusive Vintage Finds </li>
-            <li class="nav-item">Best Sellers</li>
-            <li class="nav-item">About Us</li>
-            <li class="nav-item">New Releases</li>
-            <li class="nav-item">Limited Edition</li>
-            <li class="nav-item">Deals</li>
-            <li class="nav-item">Blog</li>
-            <li class="nav-item">FAQs</li>
+            <li class="nav-item"><a href="#">Home</a></li>
+            <li class="nav-item"><a href="#">Exclusive Vintage Finds</a></li>
+            <li class="nav-item"><a href="#">Best Sellers</a></li>
+            <li class="nav-item"><a href="#">About Us</a></li>
+            <li class="nav-item"><a href="#">New Releases</a></li>
+            <li class="nav-item"><a href="#">Limited Edition</a></li>
+            <li class="nav-item"><a href="#">Deals</a></li>
+            <li class="nav-item"><a href="#">Blog</a></li>
+            <li class="nav-item"><a href="#">FAQs</a></li>
         </ul>
     </nav>
 

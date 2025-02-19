@@ -6,7 +6,6 @@ import lombok.Setter;
 import java.util.List;
 import edu.rims.vintronics.constant.ProductStatus;
 
-
 @Entity
 @Table(name = "product")
 @Getter
@@ -18,7 +17,7 @@ public class Product extends Auditable {
     private String productId;
 
     @ManyToOne
-    @JoinColumn(name = "category_id", nullable = false, foreignKey = @ForeignKey(name = "fk_category"))
+    @JoinColumn(name = "category_id")
     private Category category;
 
     @Column(name = "seller_id", nullable = false)
