@@ -7,15 +7,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 @RequestMapping("/customer")
 public class ProductController {
-    @GetMapping({"/product", "/"})
-     String product() {
+    @GetMapping({ "/product", "/" })
+    String product() {
         return "customer/product";
     }
+
 
     @GetMapping({"/pdp", "/"})
      String pdp() {
         return "customer/pdp";
     }
-    
-    
 }
