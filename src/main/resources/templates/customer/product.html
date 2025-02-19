@@ -40,8 +40,6 @@
                 <li><a href="#">Your Account</a></li>
                 <li><a href="#">Become a Seller</a></li>
                 <li><a href="#">Our Services</a></li>
-                <li><a href="#">Sign In</a></li>
-                <li><a href="#">Sign Out</a></li>
             </ul>
         </div>
         <nav class="navbar">
@@ -60,174 +58,77 @@
         </div>
     </section>
 
-    <nav class="navbar">
+    <nav>
         <ul class="nav-lists">
-            <li class="nav-item">Home</li>
-            <li class="nav-item">All Categories</li>
-            <li class="nav-item">Exclusive Vintage Finds </li>
-            <li class="nav-item">Best Sellers</li>
-            <li class="nav-item">About Us</li>
-            <li class="nav-item">New Releases</li>
-            <li class="nav-item">Limited Edition</li>
-            <li class="nav-item">Deals</li>
-            <li class="nav-item">Blog</li>
-            <li class="nav-item">FAQs</li>
+            <div class="dropdown">
+                <button>All Categories <span><i class="fa-solid fa-angle-down"></i></span></button>
+                <div class="dropdown-content">
+                    <a th:each="category : ${categories}"
+                        th:href="@{/customer/product(category=${category.categoryId})}"
+                        th:text="${category.categoryTitle}">
+                    </a>
+                </div>
+            </div>
+
+            <li class="nav-item"><a href="/customer/home">Home</a></li>
+            <li class="nav-item"><a href="#">Exclusive Vintage Finds</a></li>
+            <li class="nav-item"><a href="#">Best Sellers</a></li>
+            <li class="nav-item"><a href="#">About Us</a></li>
+            <li class="nav-item"><a href="#">New Releases</a></li>
+            <li class="nav-item"><a href="#">Limited Edition</a></li>
+            <li class="nav-item"><a href="#">Deals</a></li>
+            <li class="nav-item"><a href="#">Blog</a></li>
+            <li class="nav-item"><a href="#">FAQs</a></li>
         </ul>
     </nav>
 
-        <main>
-            <aside class="filters">
-                <h2>Add Filters</h2>
-                <input type="checkbox"> Colour <br>
-                <input type="checkbox"> Price <br>
-                <input type="checkbox"> Brand <br>
-                <input type="checkbox"> Type <br>
-                <input type="checkbox"> Discount <br>
-                <input type="checkbox"> Offers <br>
-                <p><strong>Price Range</strong></p>
-                <input type="range" min="0" max="50000" step="1000">
-            </aside>   
-            <div class="product-section">
 
-                <div class="product-container">
-                    <article class="products">
-                        <div class="img-container">
-                            <img src="/image/clock2.jpg" alt="camera">
-                        </div>
-                        <div class="product-info">
-                            <h2>Vintage Clock</h2>
-                            <p>Timeless elegance captured in a vintage retro clock</p>
-                            <span class="price">₹999</span>
-                        </div>
-                        <div class="product-action">
-                            <a href="#">Add To Cart</a>
-                        </div>
-                    </article>
-                </div>
+    <main>
+        <aside class="filters">
+            <h2>Add Filters</h2>
+            <input type="checkbox"> Colour <br>
+            <input type="checkbox"> Price <br>
+            <input type="checkbox"> Brand <br>
+            <input type="checkbox"> Type <br>
+            <input type="checkbox"> Discount <br>
+            <input type="checkbox"> Offers <br>
+            <p><strong>Price Range</strong></p>
+            <input type="range" min="0" max="50000" step="1000">
+        </aside>
 
-                <div class="product-container">
-                    <article class="products">
-                        <div class="img-container">
-                            <img src="/image/clock2.jpg" alt="camera">
-                        </div>
-                        <div class="product-info">
-                            <h2>Vintage Clock</h2>
-                            <p>Timeless elegance captured in a vintage retro clock</p>
-                            <span class="price">₹999</span>
-                        </div>
-                        <div class="product-action">
-                            <a href="#">Add To Cart</a>
-                        </div>
-                    </article>
+        <div class="product-section">
+            <article th:each="product : ${category.products}" class="products">
+                <div class="img-container">
+                    <img src="/image/clock2.jpg" alt="camera">
                 </div>
-                <div class="product-container">
-                    <article class="products">
-                        <div class="img-container">
-                            <img src="/image/clock2.jpg" alt="camera">
-                        </div>
-                        <div class="product-info">
-                            <h2>Vintage Clock</h2>
-                            <p>Timeless elegance captured in a vintage retro clock</p>
-                            <span class="price">₹999</span>
-                        </div>
-                        <div class="product-action">
-                            <a href="#">Add To Cart</a>
-                        </div>
-                    </article>
+                <div class="product-info">
+                    <h2 th:text="${product.productTitle}"></h2>
+                    <p th:text="${product.productDescription}"></p>
+                    <span class="price" th:text="|₹${product.productPrice}|"></span>
                 </div>
-                <div class="product-container">
-                    <article class="products">
-                        <div class="img-container">
-                            <img src="/image/clock2.jpg" alt="camera">
-                        </div>
-                        <div class="product-info">
-                            <h2>Vintage Clock</h2>
-                            <p>Timeless elegance captured in a vintage retro clock</p>
-                            <span class="price">₹999</span>
-                        </div>
-                        <div class="product-action">
-                            <a href="#">Add To Cart</a>
-                        </div>
-                    </article>
+                <div class="product-action">
+                    <a href="#">Add To Cart</a>
                 </div>
+            </article>
 
-                <div class="product-container">
-                    <article class="products">
-                        <div class="img-container">
-                            <img src="/image/clock2.jpg" alt="camera">
-                        </div>
-                        <div class="product-info">
-                            <h2>Vintage Clock</h2>
-                            <p>Timeless elegance captured in a vintage retro clock</p>
-                            <span class="price">₹999</span>
-                        </div>
-                        <div class="product-action">
-                            <a href="#">Add To Cart</a>
-                        </div>
-                    </article>
-                </div>
-                <div class="product-container">
-                    <article class="products">
-                        <div class="img-container">
-                            <img src="/image/clock2.jpg" alt="camera">
-                        </div>
-                        <div class="product-info">
-                            <h2>Vintage Clock</h2>
-                            <p>Timeless elegance captured in a vintage retro clock</p>
-                            <span class="price">₹999</span>
-                        </div>
-                        <div class="product-action">
-                            <a href="#">Add To Cart</a>
-                        </div>
-                    </article>
-                </div>
-                <div class="product-container">
-                    <article class="products">
-                        <div class="img-container">
-                            <img src="/image/clock2.jpg" alt="camera">
-                        </div>
-                        <div class="product-info">
-                            <h2>Vintage Clock</h2>
-                            <p>Timeless elegance captured in a vintage retro clock</p>
-                            <span class="price">₹999</span>
-                        </div>
-                        <div class="product-action">
-                            <a href="#">Add To Cart</a>
-                        </div>
-                    </article>
-                </div>
-                <div class="product-container">
-                    <article class="products">
-                        <div class="img-container">
-                            <img src="/image/clock2.jpg" alt="camera">
-                        </div>
-                        <div class="product-info">
-                            <h2>Vintage Clock</h2>
-                            <p>Timeless elegance captured in a vintage retro clock</p>
-                            <span class="price">₹999</span>
-                        </div>
-                        <div class="product-action">
-                            <a href="#">Add To Cart</a>
-                        </div>
-                    </article>
-                   </div>
+        </div>
     </main>
 
-        <div class="pagination">
-            <span>Page 1 of 10</span>
-            <a href="#" class="active">1</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <a href="#">4</a>
-            <a href="#">5</a>
-            <a href="#" class="next">NEXT</a>
-        </div>
-        
-        <div class="feedback">
-            <p>Did you find what you were looking for?</p>
-            <button>Yes</button>
-            <button>No</button>
-        </div>
+    <div class="pagination">
+        <span>Page 1 of 10</span>
+        <a href="#" class="active">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#" class="next">NEXT</a>
+    </div>
+
+    <div class="feedback">
+        <p>Did you find what you were looking for?</p>
+        <button>Yes</button>
+        <button>No</button>
+    </div>
 
 
     <footer class="footer">

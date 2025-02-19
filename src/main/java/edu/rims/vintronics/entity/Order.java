@@ -29,18 +29,6 @@ public class Order extends Auditable{
     @Column(name = "order_status", columnDefinition = "ENUM('PENDING', 'SHIPPED', 'DELIVERED', 'CANCELLED', 'CART') DEFAULT 'PENDING'")
     private OrderStatus orderStatus = OrderStatus.PENDING;
 
-    @Column(name = "created_date", updatable = false)
-    private LocalDateTime createdDate = LocalDateTime.now();
-
-    @Column(name = "updated_date")
-    private LocalDateTime updatedDate = LocalDateTime.now();
-
-    @Column(name = "created_by", length = 255)
-    private String createdBy;
-
-    @Column(name = "updated_by", length = 255)
-    private String updatedBy;
-
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<OrderItem> orderItems;
 }
