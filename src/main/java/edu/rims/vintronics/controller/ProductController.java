@@ -11,6 +11,11 @@ public class ProductController {
      String product() {
         return "customer/product";
     }
+
+    @GetMapping({"/pdp", "/"})
+     String pdp() {
+        return "customer/pdp";
+    }
     
     
 }
