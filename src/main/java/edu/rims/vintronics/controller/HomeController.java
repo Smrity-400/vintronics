@@ -24,5 +24,9 @@ public class HomeController {
         model.addAttribute("categories", categories);
         return "customer/home";
     }
-
+    
+    @GetMapping({"/contact", "/"})
+    String contact() {
+       return "customer/contact";
+   }
 }
