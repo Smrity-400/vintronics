@@ -34,4 +34,10 @@ public class HomeController {
 
         return "customer/home";
     }
+
+    
+    @GetMapping({"/contact", "/"})
+    String contact() {
+       return "customer/contact";
+   }
 }

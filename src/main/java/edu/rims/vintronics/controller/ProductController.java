@@ -31,4 +31,11 @@ public class ProductController {
         model.addAttribute("categories", categoryRepository.findAll());
         return "customer/product";
     }
+
+
+
+    @GetMapping({"/pdp", "/"})
+     String pdp() {
+        return "customer/pdp";
+    }
 }
