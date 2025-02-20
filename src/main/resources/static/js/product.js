@@ -17,3 +17,10 @@ const sidePanel = document.getElementById('sidePanel');
 hamburger.addEventListener('click', () => {
   sidePanel.classList.toggle('open');
 });
+document.addEventListener('click', (event) => {
+  if (sidePanel.classList.contains('open') &&
+  !sidePanel.contains(event.target) &&
+  !hamburger.contains(event.target)) {
+    sidePanel.classList.remove('open');
+  }
+});
