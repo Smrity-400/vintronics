@@ -1,11 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/style/admin/home.css">
 </head>
+
 <body>
-    <h1>About Admin Page</h1>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Admin Panel</h2>
+        <ul>
+            <li onclick="showSection('dashboard')">📊 Dashboard</li>
+            <li onclick="showSection('categories')">📂 Manage Categories</li>
+            <li onclick="showSection('sellers')">🛍 Manage Sellers</li>
+            <li onclick="showSection('products')">📦 Manage Products</li>
+            <li onclick="showSection('orders')">📜 Orders</li>
+            <li onclick="showSection('payments')">💰 Payments</li>
+            <li onclick="showSection('reviews')">⭐ Reviews</li>
+            <li onclick="showSection('analytics')">📈 Analytics</li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+        <!-- Dashboard Section -->
+        <div id="dashboard" class="section active">
+            <h1>📊 Dashboard Overview</h1>
+        </div>
+        <button class="add-category-btn" onclick="openModal()">+ Add Category</button>
+
+        <!-- Manage Categories -->
+        <form>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category Name</th>
+                        <th>Category Description</th>
+                        <th>Category Status</th>
+                        <th>Category Image</th>
+                    </tr>
+                </thead>
+                <tbody id="categoryTableBody">
+                    <tr data-th-each="category : ${categories}">
+                        <td data-th-text="${category.categoryName}"></td>                        
+                        <td data-th-text="${category.categoryDescription}"></td>
+                        <td></td>
+                        <td data-th-text="${category.categoryStatus}"></td> 
+                        <td></td>                       
+
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+
+    <!-- Popup Modal -->
+    <div id="categoryModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Add New Category</h2>
+            <form id="categoryForm">
+                <table>
+                    <tr>
+                        <td><label for="categoryName">Category Name:</label></td>
+                        <td><input type="text" id="categoryName" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="categoryDesc">Description:</label></td>
+                        <td><textarea id="categoryDesc"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td><label for="categoryPrice">Price:</label></td>
+                        <td><input type="number" id="categoryPrice" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="categoryStatus">Status:</label></td>
+                        <td>
+                            <select id="categoryStatus">
+                                <option value="active">Active</option>
+                                <option value="inactive">Inactive</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="categoryImage">Upload Image:</label></td>
+                        <td><input type="file" id="categoryImage" accept="image/*"></td>
+                    </tr>
+                </table>
+                <button type="button" class="submit-btn" onclick="addCategory()">Add Category</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="/js/adminhome.js"></script>
 </body>
+
 </html>
