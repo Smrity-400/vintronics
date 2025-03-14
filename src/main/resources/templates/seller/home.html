@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Dashboard</title>
+    <link rel="shortcut icon" href="/image/shortcut-logo.JPG">
+    <link rel="stylesheet" href="/style/seller/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+    <div class="sidebar">
+        <h2>Seller Panel</h2>
+        <a href="#"><i class="fa-solid fa-gauge-high"></i> Dashboard</a>
+        <a href="#"><i class="fa-solid fa-list-check"></i> Manage Products</a>
+        <a href="#"><i class="fa-solid fa-box-open"></i> Orders</a>
+        <a href="#"><i class="fa-solid fa-indian-rupee-sign"></i> Payments</a>
+        <a href="#"><i class="fa-solid fa-ranking-star"></i> Reviews</a>
+        <a href="#"><i class="fa-solid fa-right-from-bracket"></i> Log Out</a>
+    </div>
+    <div class="content">
+        <div class="top-bar">
+            <h2>Manage Product</h2>
+            <button id="openModal" class="add-product-btn">+ Add Product</button>
+        </div>
+        <table>
+            <tr>
+                <th>Product Name</th>
+                <th>Product Description</th>
+                <th>Product Status</th>
+                <th>Actions</th>
+                <th>Product Image</th>
+            </tr>
+            <tr data-th-each="homepage : ${products}">
+                <td data-th-text="${homepage.productTitle}"></td>
+                <td data-th-text="${homepage.productDescription}"></td>
+                <td data-th-text="${homepage.productStatus}"></td>
+                <td>
+                    <button class="btn edit-btn" onclick="openEditModal(1)">Edit</button>
+                    <button class="btn delete-btn" onclick="openDeleteModal(1)">Delete</button>
+                </td>
+                <td data-th-text="${homepage.productImageUrl}"></td>
+            </tr>
+        </table>
+    </div>
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add New Product</h2>
+            <form id="productForm" method="post" action="/seller/seller/home" enctype="multipart/form-data">
+                <table>
+                    <tr>
+                        <td><label for="productName">Product Name:</label></td>
+                        <td><input type="text" name="productTitle" id="productName" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="productDesc">Description:</label></td>
+                        <td><textarea name="productDescription" id="productDesc"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td><label for="productStatus">Status:</label></td>
+                        <td>
+                            <select id="productStatus" name="productStatus">
+                                <option value="ACTIVE">Active</option>
+                                <option value="INACTIVE">Inactive</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="productImage">Upload Image:</label></td>
+                        <td><input type="file" name="productImageUrl" id="productImage" accept="image/*"></td>
+                    </tr>
+                </table>
+                <input type="submit" class="submit-btn" value="Add Product">
+            </form>
+        </div>
+        <script src="/js/sellerhome.js"></script>
+</body>
+
+</html>
