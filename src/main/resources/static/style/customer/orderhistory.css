@@ -1,0 +1,63 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+.order-card {
+    background: #1e1e1e;
+    margin: 15px 0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+}
+
+.order-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.order-details {
+    flex: 1;
+    margin-left: 15px; /* Adjusted spacing */
+}
+
+.order-details h3 {
+    margin: 5px 0;
+    font-size: 18px;
+}
+
+.order-details p {
+    margin: 5px 0;
+    color: #bbb;
+    font-size: 14px;
+}
+
+.order-price {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.status {
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.review-link {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.review-link:hover {
+    text-decoration: underline;
+}

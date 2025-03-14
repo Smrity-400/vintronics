@@ -1,55 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Listing Page</title>
-    <link rel="shortcut icon" href="/image/shortcut-logo.JPG">
-    <link rel="stylesheet" href="/style/customer/product.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-</head>
+<head data-th-replace="~{fragment/common::head}"></head>
 
 <body class="bg-gray-100 flex justify-center items-center h-screen">
+    <link rel="stylesheet" href="/style/customer/product.css">
 
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="logo">
-                <nav>
-                    <img src="/image/v2-logo.png" alt="Logo" class="logo">
-                </nav>
-            </div>
-        </div>
-        <div class="search-container">
-            <input type="text" placeholder="Search for gadgets...">
-            <button>Search</button>
-        </div>
-        <div class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-
-        <div class="side-panel" id="sidePanel">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Wishlist</a></li>
-                <li><a href="#">Your Orders</a></li>
-                <li><a href="#">Your Address</a></li>
-                <li><a href="#">Your Account</a></li>
-                <li><a href="#">Become a Seller</a></li>
-                <li><a href="#">Our Services</a></li>
-            </ul>
-        </div>
-        <nav class="navbar">
-            <ul class="nav-list">
-                <li><a href="/customer/login"><i class="fa-solid fa-user"></i> Login</a></li>
-                <li><a href="#"><i class="fa-solid fa-cart-shopping"></i> Cart</a></li>
-                <li><a href="/customer/contact"><i class="fa-solid fa-phone-volume"></i> Contact Us</a></li>
-            </ul>
-        </nav>
-    </header>
+    <header data-th-replace="~{fragment/common::header}"></header>
 
     <section class="hero">
         <div class="hero-content">
@@ -73,7 +30,7 @@
             <li class="nav-item"><a href="/customer/home">Home</a></li>
             <li class="nav-item"><a href="#">Exclusive Vintage Finds</a></li>
             <li class="nav-item"><a href="#">Best Sellers</a></li>
-            <li class="nav-item"><a href="#">About Us</a></li>
+            <li class="nav-item"><a href="/customer/about">About Us</a></li>
             <li class="nav-item"><a href="#">New Releases</a></li>
             <li class="nav-item"><a href="#">Limited Edition</a></li>
             <li class="nav-item"><a href="#">Deals</a></li>
@@ -108,6 +65,8 @@
                 </div>
                 <div class="product-action">
                     <a href="#">Add To Cart</a>
+                    <br>
+                    <a th:href="@{/customer/pdp/{id}(id=${product.productId})}">View Details</a>
                 </div>
             </article>
 
@@ -130,58 +89,8 @@
         <button>No</button>
     </div>
 
+    <footer data-th-replace="~{fragment/common::footer}"></footer>
 
-    <footer class="footer">
-        <div class="footer-container">
-            <!-- Logo and Social Links -->
-            <div>
-                <img src="/image/v5-logo.png" alt="logo" class="logo">
-                <p><b>Welcome to Vintronics, your ultimate destination for vintage tech
-                        and nostalgic treasures! Whether you're a collector, a tech enthusiast, or just
-                        looking for a blast from the past, we bring you the charm of yesteryear with a
-                        modern touch.Explore our handpicked selection and relive the golden era of innovation!🚀✨</b>
-                </p>
-            </div>
-            <div class="footer-section">
-                <h3>Show us some love ❤ on Social Media</h3>
-                <div class="social-links">
-                    <a href="#" style="font-size: 34px;"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#" style="font-size: 34px;"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="#" style="font-size: 34px;"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" style="font-size: 34px;"><i class="fa-brands fa-youtube"></i></a>
-                </div>
-            </div>
-
-            <!-- Quick Links -->
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Our Story</a></li>
-                    <li><a href="#">Help Desk</a></li>
-                    <li><a href="#">FAQs</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Our Policy</a></li>
-                    <li><a href="#">Term and Conditions</a></li>
-                </ul>
-            </div>
-
-            <!-- Newsletter -->
-            <div class="footer-section">
-                <h3>Newsletter</h3>
-                <p>Sign up for the latest retro gadgets and deals!</p>
-                <form>
-                    <input type="email" placeholder="Enter your email" />
-                    <button type="submit">Subscribe</button>
-                </form>
-            </div>
-        </div>
-
-        <!-- Copyright Section -->
-        <div class="copyright">
-            <p><b>&copy; 2025 Vintronics.com , All rights reserved.</b></p>
-        </div>
-    </footer>
     <script src="/js/product.js"></script>
 </body>
 

@@ -7,6 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface CategoryRepository extends JpaRepository<Category, String> {
 
-    void save(java.util.Locale.Category category);  
-
+    void save(java.util.Locale.Category category);
 }

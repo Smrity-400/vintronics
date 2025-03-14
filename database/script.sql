@@ -129,4 +129,24 @@ CREATE TABLE seller_payment (
     updated_by VARCHAR(255),
     CONSTRAINT fk_seller FOREIGN KEY (seller_id) REFERENCES users(user_id) ON DELETE CASCADE,
     CONSTRAINT fk_seller_order FOREIGN KEY (order_id) REFERENCES orders(order_id) ON DELETE CASCADE
-); 
+);
+
+CREATE TABLE seller (
+    seller_id INT AUTO_INCREMENT PRIMARY KEY,
+    seller_name VARCHAR(100) NOT NULL,
+    seller_store_name VARCHAR(100) NOT NULL,
+    seller_email VARCHAR(100) UNIQUE NOT NULL,
+    seller_phone VARCHAR(15) NOT NULL,
+    gst_no VARCHAR(15) UNIQUE NOT NULL,
+    address TEXT NOT NULL,
+    total_products INT DEFAULT 0,
+    seller_status ENUM('Active', 'Inactive') DEFAULT 'Active',
+    commission_percentage DECIMAL(5,2) DEFAULT 5.00,
+    seller_bank_account_number VARCHAR(20) UNIQUE NOT NULL,
+    seller_ifsc_code VARCHAR(11) NOT NULL,
+    created_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    created_by VARCHAR(255),
+    updated_by VARCHAR(255),
+    CONSTRAINT fk_seller_user FOREIGN KEY (seller_id) REFERENCES user(user_id) ON DELETE CASCADE
+);

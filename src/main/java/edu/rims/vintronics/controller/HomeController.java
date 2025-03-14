@@ -40,4 +40,19 @@ public class HomeController {
     String contact() {
        return "customer/contact";
    }
+
+   @GetMapping({"/about", "/"})
+    String about() {
+       return "customer/about";
+   }
+
+   @GetMapping({"/orderhistory", "/"})
+    String orderhistory() {
+       return "customer/orderhistory";
+   }
+
+   @GetMapping({"/placeorder", "/"})
+    String placeorder() {
+       return "customer/placeorder";
+   }
 }
