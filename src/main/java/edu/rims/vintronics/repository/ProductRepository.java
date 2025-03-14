@@ -7,4 +7,9 @@ import edu.rims.vintronics.entity.Product;
 
 @Repository
 public interface ProductRepository extends JpaRepository<Product, String> {
+
+    List<Product> findByCategory(Category category);
+
+    List<Product> findByCategoryCategoryId(String categoryId);
+
 }

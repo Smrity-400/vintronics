@@ -34,7 +34,7 @@ public class User extends Auditable {
     private String userAddress;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "user_role", columnDefinition = "ENUM('CUSTOMER', 'ADMIN', 'SELLER') DEFAULT 'CUSTOMER'")
+    @Column(name = "user_role", columnDefinition = "ENUM('CUSTOMER', 'ADMIN', 'SELLER')")
     private UserRole userRole = UserRole.CUSTOMER;
 
     @OneToMany(mappedBy = "buyer")
