@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Vintronics</title>
+    <link rel="stylesheet" href="/style/customer/about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>About Vintronics</h1>
+    </header>
+    
+    <section class="story">
+        <h2>The Vintronics Story</h2>
+        <p>At Vintronics, we believe in blending innovation with nostalgia. Our journey began with a passion for retro technology, transforming it into a modern experience...</p>
+        <img src="story.jpg" alt="Vintronics Story">
+    </section>
+    
+    <section class="vision-mission">
+        <div class="vision">
+            <h2>Our Vision</h2>
+            <p>To be a leader in retro-modern electronics, inspiring innovation while preserving technology's golden era.</p>
+        </div>
+        <div class="mission">
+            <h2>Our Mission</h2>
+            <p>Delivering high-quality, sustainable, and timeless tech solutions for every enthusiast and collector.</p>
+        </div>
+    </section>
+    
+    <section class="values">
+        <h2>Our Values</h2>
+        <div class="value-box">
+            <div>Innovation</div>
+            <div>Quality</div>
+            <div>Customer First</div>
+            <div>Sustainability</div>
+        </div>
+    </section>
+    
+    <section class="leadership">
+        <h2>Our Leadership Team</h2>
+        <div class="team">
+            <div class="leader">
+                <img src="ceo.jpg" alt="CEO">
+                <h3>John Doe</h3>
+                <p>Founder & CEO</p>
+            </div>
+            <div class="leader">
+                <img src="cto.jpg" alt="CTO">
+                <h3>Jane Smith</h3>
+                <p>Chief Technology Officer</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="customer-testimonials">
+        <h2>What Our Customers Are Saying About Us</h2>
+        <div class="testimonial-container">
+            <button class="prev-btn" onclick="prevTestimonial()">&#x2190;</button>
+            <div class="testimonial">
+                <p class="quote">"</p>
+                <p id="testimonial-text">I love Vintronics products! The quality and service are outstanding. Highly recommend to everyone!</p>
+                <p class="customer-name" id="customer-name">Rahul Sharma</p>
+                <p class="customer-location" id="customer-location">Mumbai, India</p>
+            </div>
+            <button class="next-btn" onclick="nextTestimonial()">&#x2192;</button>
+        </div>
+        <div class="dots-container" id="dots"></div>
+    </section>
+    
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Logo and Social Links -->
+            <div>
+                <img src="/image/v5-logo.png" alt="logo" class="logo">
+                <p><b>Welcome to Vintronics, your ultimate destination for vintage tech
+                        and nostalgic treasures! Whether you're a collector, a tech enthusiast, or just
+                        looking for a blast from the past, we bring you the charm of yesteryear with a
+                        modern touch.Explore our handpicked selection and relive the golden era of innovation!🚀✨</b>
+                </p>
+            </div>
+            <div class="footer-section">
+                <h3>Show us some love ❤ on Social Media</h3>
+                <div class="social-links">
+                    <a href="#" style="font-size: 34px;"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" style="font-size: 34px;"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" style="font-size: 34px;"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" style="font-size: 34px;"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Help Desk</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Our Policy</a></li>
+                    <li><a href="#">Term and Conditions</a></li>
+                </ul>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <p>Sign up for the latest retro gadgets and deals!</p>
+                <form>
+                    <input type="email" placeholder="Enter your email" />
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Copyright Section -->
+        <div class="copyright">
+            <p><b>&copy; 2025 Vintronics.com , All rights reserved.</b></p>
+        </div>
+    </footer>
+    <script src="/js/about.js"></script>
+</body>
+</html>

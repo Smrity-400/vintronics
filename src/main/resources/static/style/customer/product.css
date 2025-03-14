@@ -7,131 +7,6 @@ body {
   color: #fff;
 }
 
-/* Search Container */
-.search-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 20px auto;
-  width: 40%;
-  border-radius: 30px;
-  padding: 5px;
-}
-
-.search-container input {
-  flex: 1;
-  border: none;
-  border-radius: 30px;
-  padding: 10px 15px;
-  font-size: 16px;
-  outline: none;
-  margin-right: 10px;
-}
-
-.search-container input::placeholder {
-  color: #777;
-  font-style: italic;
-}
-
-.search-container button {
-  background: linear-gradient(90deg, #ff8a00, #e52e71);
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: transform 0.3s ease, background 0.3s ease;
-}
-
-.search-container button:hover {
-  background: linear-gradient(90deg, #e52e71, #ff8a00);
-  transform: scale(1.1);
-}
-
-.search-container button:active {
-  transform: scale(0.95);
-}
-
-/* Header */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 5px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  transition: 1s ease 0.1s;
-}
-
-.logo {
-  max-width: 200px;
-  max-height: 300px;
-  object-fit: cover;
-  margin: 10px 0;
-}
-
-.logo-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-  background-color: white;
-}
-
-header nav a {
-  margin: 0px;
-  text-decoration: none;
-  font-size: 1em;
-}
-
-header nav a:hover {
-  color: #fff;
-}
-
-.navbar {
-  position: sticky;
-  padding: 10px;
-  text-align: center;
-  background-color: transparent;
-  text-transform: capitalize;
-}
-
-.nav-list {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: inline-flex;
-  font-family: 'Times New Roman', sans-serif;
-  gap: 20px;
-}
-
-.nav-list li {
-  display: inline;
-}
-
-.nav-list a {
-  color: white;
-  text-decoration: none;
-  font-size: 16px;
-  background-color: transparent;
-  border: 1px solid goldenrod;
-  padding: 0.5rem 1rem;
-  border-radius: 1rem;
-  text-transform: capitalize;
-  word-spacing: 3px;
-}
-
-.nav-list a:hover {
-  background-color: goldenrod;
-  border: none;
-  color: black;
-}
-
 */Dropdown container */ .dropdown {
   position: relative;
   display: inline-block;
@@ -253,6 +128,10 @@ header nav a:hover {
   padding: 10px 0;
 }
 
+.navbar {
+  padding: 10px 0;
+}
+
 .nav-lists {
   list-style-type: none;
   margin: 0;
@@ -276,9 +155,10 @@ header nav a:hover {
   background-color: #ff9800;
   border-radius: 4px;
 }
+
 .nav-item a {
-  text-decoration: none;  
-  color: inherit; 
+  text-decoration: none;
+  color: inherit;
 }
 
 .hero {
@@ -385,112 +265,6 @@ main {
   transform: translateY(2px);
 }
 
-/* Footer */
-.footer {
-  background-color: #333;
-  color: #ffcc00;
-  padding: 20px 0;
-  text-align: center;
-  background: url('/image/vintronics-background.jpg');
-}
-
-.logo {
-  width: 200px;
-  margin-bottom: 0;
-  margin-left: auto;
-}
-
-.footer-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.footer-section {
-  flex: 1 1 200px;
-  margin: 10px;
-}
-
-.footer-section h2,
-.footer-section h3 {
-  font-size: 1.5em;
-  margin-bottom: 10px;
-}
-
-.footer-section p {
-  margin-bottom: 10px;
-}
-
-.social-links a {
-  display: inline-block;
-  margin: 0 10px;
-  color: white;
-  text-decoration: none;
-}
-
-.social-links a:hover {
-  color: #1a1a1a;
-}
-
-.footer-section ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-sections li {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  gap: 10px;
-}
-
-.footer-section ul li {
-  margin: 5px 0;
-}
-
-.footer-section ul li a {
-  color: white;
-  text-decoration: none;
-}
-
-.footer-section ul li a:hover {
-  color: #1a1a1a;
-}
-
-.footer-section form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.footer-section input {
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.footer-section button {
-  background-color: #1b0708;
-  color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.footer-section button:hover {
-  background-color: #ff4500;
-}
-
-.footer-section img {
-  max-width: 150px;
-  height: fit-content;
-  border-radius: 10px;
-}
 
 .copyright {
   text-align: center;

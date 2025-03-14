@@ -64,10 +64,10 @@
                 </div>
             </div>
             <div class="product-details">
-                <h1>Vintage Light Lamp</h1>
+                <h1 th:text="${product.productTitle}"></h1>
                 <p class="rating">⭐⭐⭐ 3.5/5 (45 ratings)</p>
-                <p class="price"><span class="discount">-40%</span> ₹1,799 <span class="original-price">₹2,999</span></p>
-                <p class="description">Beautiful retro-style lamp, perfect for vintage-themed rooms.</p>
+                <p class="price"><span th:text="|₹${product.productPrice}|"></span></p><span class="discount">-40%</span> ₹1,799 <span class="original-price">₹2,999</span></p>
+                <p class="description" th:text="${product.productDescription}"></p>
                 <div class="offers">
                     <p><strong>Offers:</strong></p>
                     <ul>

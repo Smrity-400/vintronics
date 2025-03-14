@@ -1,59 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vintronics The Retro Gadgets Store</title>
-    <link rel="shortcut icon" href="/image/shortcut-logo.JPG">
-    <link rel="stylesheet" href="/style/customer/home.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-</head>
+<head data-th-replace="~{fragment/common::head}"></head>
 
 <body class="bg-gray-100 flex justify-center items-center h-screen">
+    <link rel="stylesheet" href="/style/customer/home.css">
 
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="logo">
-                <nav>
-                    <img src="/image/v2-logo.png" alt="Logo" class="logo">
-                </nav>
-            </div>
-        </div>
-        <div class="search-container">
-            <input type="text" placeholder="Search for gadgets...">
-            <button>Search</button>
-        </div>
-        <div class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-
-        <div class="side-panel" id="sidePanel">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Wishlist</a></li>
-                <li><a href="#">Your Orders</a></li>
-                <li><a href="#">Your Address</a></li>
-                <li><a href="#">Your Account</a></li>
-                <li><a href="#">Become a Seller</a></li>
-                <li><a href="#">Our Services</a></li>
-            </ul>
-        </div>
-
-        <nav class="navbar1">
-            <ul class="nav-list1">
-
-        <nav class="navbar">
-            <ul class="nav-list">
-            <li><a href="/customer/login"><i class="fa-solid fa-user"></i> Login</a></li>
-            <li><a href="#"><i class="fa-solid fa-cart-shopping"></i> Cart</a></li>
-            <li><a href="/customer/contact"><i class="fa-solid fa-phone-volume"></i> Contact Us</a></li>
-            </ul>
-        </nav>
-    </header>
+    <header data-th-replace="~{fragment/common::header}"></header>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -82,7 +35,7 @@
             <li class="nav-item"><a href="#">Home</a></li>
             <li class="nav-item"><a href="#">Exclusive Vintage Finds</a></li>
             <li class="nav-item"><a href="#">Best Sellers</a></li>
-            <li class="nav-item"><a href="#">About Us</a></li>
+            <li class="nav-item"><a href="/customer/about">About us</a></li>
             <li class="nav-item"><a href="#">New Releases</a></li>
             <li class="nav-item"><a href="#">Limited Edition</a></li>
             <li class="nav-item"><a href="#">Deals</a></li>
@@ -325,6 +278,8 @@
             </div>
         </div>
     </section>
+    <footer data-th-replace="~{fragment/common::footer}"></footer>
+
 
     <div class="footer-highlights">
         <div class="highlight-item">
