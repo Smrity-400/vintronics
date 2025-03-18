@@ -26,9 +26,9 @@
     color: white;
     text-decoration: none;
     padding: 10px;
-    margin: 5px 0;
+    margin: 5px 5px;
     background: #34495e;
-    border-radius: 5px;
+    border-radius: 4px;
 }
 .sidebar a:hover {
     background: #1abc9c;
@@ -222,55 +222,9 @@ th {
     margin: 10px 0;
 }
 
-header nav1 a {
-    margin: 0px;
-    text-decoration: none;
-    font-size: 1em;
-}
-
-header nav1 a:hover {
-    color: #fff;
-}
-
-.navbar1 {
-    position: sticky;
-    padding: 10px 20px;
+.copyright {
     text-align: center;
-    background-color: transparent;
-    text-transform: capitalize;
-    z-index: 1000;
-    display: flex;
-    top: 0;
-    left: 0;
-}
-
-.nav-list1 {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: inline-flex;
-    font-family: 'Times New Roman', sans-serif;
-    gap: 20px;
-}
-
-.nav-list1 li {
-    display: inline;
-}
-
-.nav-list1 a {
-    color: #1a252f;
-    text-decoration: none;
-    font-size: 16px;
-    background-color: transparent;
-    border: 1px solid goldenrod;
-    padding: 0.5rem 1rem;
-    border-radius: 1rem;
-    text-transform: capitalize;
-    word-spacing: 3px;
-}
-
-.nav-list1 a:hover {
-    background-color: goldenrod;
-    border: none;
     color: black;
-}
+    font-size: 20px;
+    bottom: 20px;
+  }

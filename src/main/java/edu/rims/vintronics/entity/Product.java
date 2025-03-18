@@ -45,4 +45,7 @@ public class Product extends Auditable {
 
     @OneToMany(mappedBy = "product")
     private List<OrderItem> orderItems;
+
+    @OneToMany(mappedBy = "product")
+    private List<Wishlist> wishlist;
 }

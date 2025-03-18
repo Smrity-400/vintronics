@@ -3,9 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="shortcut icon" href="/image/shortcut-logo.JPG">
+    <title>Seller Login Page</title>
+    <link rel="stylesheet" href="/style/seller/login.css">
 </head>
 <body>
-    <p>Here the seller can login themselves and sale their products</p>
+    <div class="container" id="loginContainer">
+        <h2>Seller Login</h2>
+        <form id="sellerLoginForm" method="post" action="">
+            <div class="input-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="#" id="showSignup">Sign Up</a></p>
+    </div>
+    
+    <div class="container" id="signupContainer" style="display: none;">
+        <h2>Seller Signup</h2>
+        <form id="sellerSignupForm">
+            <div class="input-group">
+                <label for="signupEmail">Email:</label>
+                <input type="email" id="signupEmail" name="signupEmail" required>
+            </div>
+            <div class="input-group">
+                <label for="signupPassword">Password:</label>
+                <input type="password" id="signupPassword" name="signupPassword" required>
+            </div>
+            <div class="input-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="input-group">
+                <label for="gst">GST No:</label>
+                <input type="text" id="gst" name="gst" required>
+            </div>
+            <div class="input-group">
+                <label for="shopName">Shop Name:</label>
+                <input type="text" id="shopName" name="shopName" required>
+            </div>
+            <div class="input-group">
+                <label for="shopAddress">Shop Address:</label>
+                <textarea id="shopAddress" name="shopAddress" required></textarea>
+            </div>
+            <button type="submit">Sign Up</button>
+        </form>
+        <p>Already have an account? <a href="#" id="showLogin">Login</a></p>
+    </div>
+    
+    <script src="/js/sellerlogin.js"></script>
 </body>
 </html>

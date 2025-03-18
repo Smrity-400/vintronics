@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
-
 import edu.rims.vintronics.entity.Product;
 import edu.rims.vintronics.repository.ProductRepository;
 import edu.rims.vintronics.repository.UserRepository;
@@ -24,24 +23,19 @@ import edu.rims.vintronics.repository.UserRepository;
 @RequestMapping("/seller")
 public class SellerController {
 
-    private final AdminController adminController;
-
     @Autowired
     private ProductRepository productRepository;
 
+    @SuppressWarnings("unused")
     @Autowired
     private UserRepository userRepository;
-
-    SellerController(AdminController adminController) {
-        this.adminController = adminController;
-    }
 
     @GetMapping({ "/home", "/" })
     String sellerProduct(Model model) {
         List<edu.rims.vintronics.entity.Product> products = productRepository.findAll();
         model.addAttribute("products", products);
         return "seller/home";
-    }  // <-- Fixed missing closing brace
+    }
 
     @PostMapping("/home") 
     public String productAdd(@ModelAttribute Product product, @RequestParam("productImageUrl") MultipartFile file)
@@ -61,7 +55,14 @@ public class SellerController {
         product.setUpdatedBy("admin");
         product.setProductImageUrl(fileName);
 
-        productRepository.save(product);  // Fixed incorrect repository name
+        productRepository.save(product);  
         return "redirect:/seller/home";
     }
+
+    @GetMapping({"/sellerlogin", "/"})
+    String contact() {
+       return "seller/sellerlogin";
+   }
+
 }
+

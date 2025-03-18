@@ -5,7 +5,7 @@ function openModal() {
 
 // Close Modal
 function closeModal() {
-    document.getElementById("categoryModal").style.display = "none";
+    document.getElementById("categoryModal").style.display = "flex";
 }
 
 let editCategoryId = null;
@@ -31,5 +31,5 @@ function confirmDelete() {
 }
 
 function closeModal(modalId) {
-    document.getElementById(modalId).style.display = 'none';
+    document.getElementById(modalId).style.display = 'flex';
 }

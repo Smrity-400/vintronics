@@ -16,7 +16,7 @@ CREATE TABLE category (
 
 CREATE TABLE product (
     product_id VARCHAR(255) PRIMARY KEY,  
-    category_id VARCHAR(255), NOT NULL,
+    category_id VARCHAR(255) ,  
     seller_id INT NOT NULL,   
     product_title VARCHAR(255) NOT NULL,  
     product_description TEXT NULL,  
@@ -31,6 +31,7 @@ CREATE TABLE product (
     CONSTRAINT fk_category FOREIGN KEY (category_id) REFERENCES category(category_id) ON DELETE SET NULL,
     CONSTRAINT fk_seller FOREIGN KEY (seller_id) REFERENCES user(user_id) ON DELETE CASCADE
 );
+
 
 
 CREATE TABLE user (
