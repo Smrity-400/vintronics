@@ -151,3 +151,12 @@ CREATE TABLE seller (
     updated_by VARCHAR(255),
     CONSTRAINT fk_seller_user FOREIGN KEY (seller_id) REFERENCES user(user_id) ON DELETE CASCADE
 );
+
+CREATE TABLE widget(
+    widget_id VARCHAR(255) PRIMARY KEY,
+    widget_name VARCHAR(100) NOT NULL,
+    created_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    created_by VARCHAR(255), 
+    updated_by VARCHAR(255)
+);

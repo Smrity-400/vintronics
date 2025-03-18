@@ -46,6 +46,13 @@ public class Product extends Auditable {
     @OneToMany(mappedBy = "product")
     private List<OrderItem> orderItems;
 
-    @OneToMany(mappedBy = "product")
-    private List<Wishlist> wishlist;
+    public void addWidget(Widget widget) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'addWidget'");
+    }
+
+    public void removeWidget(Widget widget) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'removeWidget'");
+    }
 }
