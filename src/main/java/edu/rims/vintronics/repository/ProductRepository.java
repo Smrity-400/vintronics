@@ -15,4 +15,6 @@ public interface ProductRepository extends JpaRepository<Product, String> {
 
     List<Product> findByCategoryCategoryId(String categoryId);
 
-}
+
+        List<Product> findByProductTitleContainingIgnoreCase(String productTitle);
+    }

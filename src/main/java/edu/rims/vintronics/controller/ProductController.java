@@ -1,5 +1,7 @@
 package edu.rims.vintronics.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -39,4 +41,13 @@ public class ProductController {
         model.addAttribute("product", product);
         return "customer/pdp"; // PDP Page
     }
+
+     @GetMapping("/product/home")
+    public String searchProduct(@RequestParam("search") String productTitle, Model model) {
+        List<Product> products = productRepository.findByProductTitleContainingIgnoreCase(productTitle);
+        model.addAttribute("products", products);
+        model.addAttribute(productTitle, products);
+        return "customer/product";
+    }
+    
 }

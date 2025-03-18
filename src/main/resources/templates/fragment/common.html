@@ -21,9 +21,12 @@
         </div>
     </div>
     <div class="search-container">
-        <input type="text" placeholder="Search for gadgets...">
-        <button>Search</button>
+        <form action="/customer/product/home" method="GET">  <!-- Ensure method is GET -->
+            <input type="text" name="search" placeholder="Search for gadgets..." required>
+            <button type="submit">Search</button>
+        </form>
     </div>
+
     <div class="hamburger" id="hamburger">
         <span></span>
         <span></span>

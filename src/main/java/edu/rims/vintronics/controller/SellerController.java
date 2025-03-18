@@ -64,4 +64,5 @@ public class SellerController {
         productRepository.save(product);  // Fixed incorrect repository name
         return "redirect:/seller/home";
     }
+
 }
