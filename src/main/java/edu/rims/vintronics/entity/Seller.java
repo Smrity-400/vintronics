@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import java.math.BigDecimal;
+import java.util.List;
 
 import edu.rims.vintronics.constant.SellerStatus;
 
@@ -37,7 +38,7 @@ public class Seller extends Auditable {
     private String address;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "seller_status", columnDefinition = "ENUM('Active','Inactive') DEFAULT 'Active'")
+    @Column(name = "seller_status", columnDefinition = "ENUM('ACTIVE','INACTIVE') DEFAULT 'ACTIVE'")
     private SellerStatus sellerStatus = SellerStatus.ACTIVE;
 
     @Column(name = "commission_percentage", precision = 5, scale = 2, columnDefinition = "DECIMAL(5,2) DEFAULT 5.00")
@@ -49,5 +50,7 @@ public class Seller extends Auditable {
     @Column(name = "seller_ifsc_code", nullable = false, length = 11)
     private String sellerIfscCode;
 
+    @OneToMany(mappedBy = "seller")
+    private List<Product> products;
 }
 

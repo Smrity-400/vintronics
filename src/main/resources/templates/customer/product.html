@@ -53,11 +53,11 @@
             <input type="range" min="0" max="50000" step="1000">
         </aside>
 
-        <div class="product-section" data-th-if="${products != null and not #lists.isEmpty(products)}">
+        <div class="product-section" data-th-if="${param.search != null}">
             <article th:each="product : ${products}"
                 class="products">
                 <div class="img-container">
-                    <img src="/image/clock2.jpg" alt="camera">
+                    <img data-th-src="|/customer/image/${product.productId}|" alt="camera">
                 </div>
                 <div class="product-info">
                     <h2 th:text="${product.productTitle}"></h2>
@@ -71,10 +71,10 @@
                 </div>
             </article>
         </div>
-        <div class="product-section" data-th-if="${#list.isEmpty(category.products)}">
+        <div class="product-section" data-th-if="${param.search == null}">
             <article th:each="product : ${category.products}" class="products">
                 <div class="img-container">
-                    <img src="/image/clock2.jpg" alt="camera">
+                    <img data-th-src="|/customer/image/${product.productId}|" alt="camera">
                 </div>
                 <div class="product-info">
                     <h2 th:text="${product.productTitle}"></h2>

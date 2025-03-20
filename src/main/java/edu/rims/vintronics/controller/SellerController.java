@@ -15,13 +15,26 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+
+import edu.rims.vintronics.entity.Category;
 import edu.rims.vintronics.entity.Product;
+import edu.rims.vintronics.entity.Seller;
+import edu.rims.vintronics.repository.CategoryRepository;
 import edu.rims.vintronics.repository.ProductRepository;
+import edu.rims.vintronics.repository.SellerRepository;
 import edu.rims.vintronics.repository.UserRepository;
 
 @Controller
 @RequestMapping("/seller")
 public class SellerController {
+
+    private final AdminController adminController;
+
+    @Autowired
+    private SellerRepository sellerRepository;
+    
+    @Autowired
+    private CategoryRepository categoryRepository;
 
     @Autowired
     private ProductRepository productRepository;
@@ -30,39 +43,58 @@ public class SellerController {
     @Autowired
     private UserRepository userRepository;
 
-    @GetMapping({ "/home", "/" })
+    SellerController(AdminController adminController) {
+        this.adminController = adminController;
+    }
+
+    @GetMapping("/home")
     String sellerProduct(Model model) {
-        List<edu.rims.vintronics.entity.Product> products = productRepository.findAll();
+        List<Product> products = productRepository.findAll();
+        List<Category> categories = categoryRepository.findAll();
         model.addAttribute("products", products);
+        model.addAttribute("categories", categories);
         return "seller/home";
     }
 
-    @PostMapping("/home") 
-    public String productAdd(@ModelAttribute Product product, @RequestParam("productImageUrl") MultipartFile file)
+    @PostMapping("/home")
+    public String productAdd(@ModelAttribute Product product, @RequestParam("productImage") MultipartFile file)
             throws IOException {
 
-        String originalName = file.getOriginalFilename();
-        String fileName = "uploads/" + UUID.randomUUID().toString()
-                + originalName.substring(originalName.lastIndexOf("."));
-        
-        FileOutputStream fileOutputStream = new FileOutputStream(fileName);
-        fileOutputStream.write(file.getBytes());
-        fileOutputStream.close();
-        
+        if (!file.isEmpty()) {
+            String originalName = file.getOriginalFilename();
+            String fileName = "uploads/" + UUID.randomUUID().toString()
+                    + originalName.substring(originalName.lastIndexOf("."));
+
+            FileOutputStream fileOutputStream = new FileOutputStream(fileName);
+            fileOutputStream.write(file.getBytes());
+            product.setProductImageUrl(fileName);
+            fileOutputStream.close();
+        }
+
+        Seller seller = sellerRepository.findById(1).orElseThrow();
         product.setCreatedDate(LocalDateTime.now());
         product.setUpdatedDate(LocalDateTime.now());
-        product.setCreatedBy("admin");
-        product.setUpdatedBy("admin");
-        product.setProductImageUrl(fileName);
+        product.setCreatedBy(seller.getSellerName());
+        product.setUpdatedBy(seller.getSellerName());
+        product.setSeller(seller);
 
-        productRepository.save(product);  
+        productRepository.save(product);
         return "redirect:/seller/home";
     }
 
-    @GetMapping({"/sellerlogin", "/"})
+    @GetMapping({ "/sellerlogin", "/" })
     String contact() {
-       return "seller/sellerlogin";
-   }
+        return "seller/sellerlogin";
+    }
+
+    @PostMapping("/signup")
+    String signUp(@ModelAttribute Seller seller) {
+        seller.setCreatedDate(LocalDateTime.now());
+        seller.setUpdatedDate(LocalDateTime.now());
+        seller.setCreatedBy(seller.getSellerName());
+        seller.setUpdatedBy(seller.getSellerName());
+        sellerRepository.save(seller);
+        return "redirect:/seller/sellerlogin";
+    }
 
 }
-

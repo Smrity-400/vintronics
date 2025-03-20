@@ -1,13 +1,16 @@
 package edu.rims.vintronics.controller;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.List;
-
+import edu.rims.vintronics.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import edu.rims.vintronics.entity.Category;
@@ -19,11 +22,17 @@ import edu.rims.vintronics.repository.ProductRepository;
 @RequestMapping("/customer")
 public class ProductController {
 
+    private final UserRepository userRepository;
+
     @Autowired
     private CategoryRepository categoryRepository;
 
     @Autowired
     private ProductRepository productRepository;
+
+    ProductController(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
     // PLP - Fetch all products in a category
     @GetMapping("/product")
@@ -50,4 +59,12 @@ public class ProductController {
         return "customer/product";
     }
     
+    @GetMapping("/image/{id}")
+    @ResponseBody
+    byte[]  getProductImage(@PathVariable String id) throws IOException{
+        Product product = productRepository.findById(id).orElseThrow();
+        String imageName = product.getProductImageUrl();
+        FileInputStream fileInputStream = new FileInputStream(imageName);
+        return fileInputStream.readAllBytes();
+    }
 }
