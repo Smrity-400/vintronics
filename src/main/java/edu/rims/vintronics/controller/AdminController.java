@@ -73,4 +73,9 @@ public class AdminController {
         return fis.readAllBytes();
     }
 
+    @GetMapping("/dashboard")
+    String admin() {
+       return "admin/dashboard";
+   }
+
 }

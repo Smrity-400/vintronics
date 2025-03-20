@@ -33,15 +33,15 @@
                 <th>Actions</th>
                 <th>Product Image</th>
             </tr>
-            <tr data-th-each="homepage : ${products}">
-                <td data-th-text="${homepage.productTitle}"></td>
-                <td data-th-text="${homepage.productDescription}"></td>
-                <td data-th-text="${homepage.productStatus}"></td>
+            <tr data-th-each="product : ${products}">
+                <td data-th-text="${product.productTitle}"></td>
+                <td data-th-text="${product.productDescription}"></td>
+                <td data-th-text="${product.productStatus}"></td>
                 <td>
                     <button class="btn edit-btn" onclick="openEditModal(1)">Edit</button>
                     <button class="btn delete-btn" onclick="openDeleteModal(1)">Delete</button>
                 </td>
-                <td data-th-text="${homepage.productImageUrl}"></td>
+                <td ><img data-th-src="|/customer/image/${product.productId}|" width="50" alt=""></td>
             </tr>
         </table>
     </div>
@@ -54,6 +54,14 @@
                     <tr>
                         <td><label for="productName">Product Name:</label></td>
                         <td><input type="text" name="productTitle" id="productName" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="productPrice">Product price:</label></td>
+                        <td><input type="text" name="productPrice" id="productPrice" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="productStock">Product Stock Quantity:</label></td>
+                        <td><input type="text" name="productStockQuantity" id="productStock" required></td>
                     </tr>
                     <tr>
                         <td><label for="productDesc">Description:</label></td>
@@ -70,7 +78,16 @@
                     </tr>
                     <tr>
                         <td><label for="productImage">Upload Image:</label></td>
-                        <td><input type="file" name="productImageUrl" id="productImage" accept="image/*"></td>
+                        <td><input type="file" name="productImage" id="productImage" accept="image/*"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="productImage">Select Category:</label></td>
+                        <td>
+                            <select name="category" id="category">
+                                <option value="Select Categories" disabled selected>Select Category</option>
+                                <option data-th-value="${category.categoryId}" data-th-each="category:${categories}" data-th-text="${category.categoryTitle}"></option>
+                            </select>
+                        </td>
                     </tr>
                 </table>
                 <input type="submit" class="submit-btn" value="Add Product">

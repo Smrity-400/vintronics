@@ -14,15 +14,16 @@ public class Product extends Auditable {
 
     @Id
     @Column(name = "product_id", nullable = false, length = 255)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
     private String productId;
     
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
 
-    @Column(name = "seller_id", nullable = false)
-    private Integer sellerId;
+    @JoinColumn(name = "seller_id", nullable = false)
+    @ManyToOne
+    private Seller seller;
 
     @Column(name = "product_title", nullable = false, length = 255)
     private String productTitle;
