@@ -39,4 +39,5 @@ public class User extends Auditable {
 
     @OneToMany(mappedBy = "buyer")
     private List<Order> orders;
+
 }

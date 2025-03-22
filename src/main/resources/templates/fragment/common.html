@@ -40,9 +40,14 @@
             <li><a href="/customer/orderhistory">Your Orders</a></li>
             <li><a href="#">Your Address</a></li>
             <li><a href="#">Your Account</a></li>
-            <li><a href="#">Become a Seller</a></li>
+            <li><a href="/seller/home">Become a Seller</a></li>
             <li><a href="#">Our Services</a></li>
-            <li><a href="#">LogOut</a></li>
+            <li>
+                <form action="/logout" method="post" data-sec-authorize="isAuthenticated()">
+                    <input type="hidden" name="_csrf" data-th-value="${_csrf.token}">
+                    <button type="submit">Logout</button>
+                </form>
+            </li>
         </ul>
     </div>
 
@@ -114,6 +119,7 @@
                 <li><a href="#">Contact Us</a></li>
                 <li><a href="#">Our Policy</a></li>
                 <li><a href="#">Term and Conditions</a></li>
+                <li><a href="/admin/home">Admin</a></li>
             </ul>
         </div>
 

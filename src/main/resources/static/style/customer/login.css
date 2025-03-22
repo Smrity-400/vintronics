@@ -5,11 +5,6 @@
     --white: #ffffff;
     --gray: #efefef;
     --gray-2: #757575;
-
-    --facebook-color: #4267B2;
-    --google-color: #DB4437;
-    --twitter-color: #1DA1F2;
-    --insta-color: #E1306C;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
@@ -164,22 +159,6 @@ body {
     transform: scale(1.5);
 }
 
-.facebook-bg {
-    background-color: var(--facebook-color);
-}
-
-.google-bg {
-    background-color: var(--google-color);
-}
-
-.twitter-bg {
-    background-color: var(--twitter-color);
-}
-
-.insta-bg {
-    background-color: var(--insta-color);
-}
-
 .pointer {
     cursor: pointer;
 }
@@ -291,10 +270,6 @@ body {
         right: 0;
     }
 
-    /* .container.sign-in .col.sign-up {
-        transform: translateY(100%);
-    } */
-
     .container.sign-in .col.sign-in,
     .container.sign-up .col.sign-up {
         transform: translateY(0);
@@ -366,4 +341,27 @@ body {
 /* Phone number input */
 .input-group input[type="tel"] {
     width: 100%;
+}
+
+button {
+    background-color: goldenrod;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button a {
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+button:hover {
+    background-color: darkgoldenrod;
 }
