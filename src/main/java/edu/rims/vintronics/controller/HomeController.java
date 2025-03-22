@@ -16,7 +16,7 @@ import edu.rims.vintronics.repository.ProductRepository;
 @Controller
 @RequestMapping("/customer")
 public class HomeController {
-    
+
     @Autowired
     private CategoryRepository categoryRepository;
 
@@ -30,29 +30,28 @@ public class HomeController {
 
         model.addAttribute("categories", categories);
         model.addAttribute("products", allProducts); // Add products for homepage display
-        model.addAttribute("selectedCategory", "All Products"); 
+        model.addAttribute("selectedCategory", "All Products");
 
         return "customer/home";
     }
 
-    
-    @GetMapping({"/contact", "/"})
+    @GetMapping({ "/contact", "/" })
     String contact() {
-       return "customer/contact";
-   }
+        return "customer/contact";
+    }
 
-   @GetMapping({"/about", "/"})
+    @GetMapping({ "/about", "/" })
     String about() {
-       return "customer/about";
-   }
+        return "customer/about";
+    }
 
-   @GetMapping({"/orderhistory", "/"})
+    @GetMapping({ "/orderhistory", "/" })
     String orderhistory() {
-       return "customer/orderhistory";
-   }
+        return "customer/orderhistory";
+    }
 
-   @GetMapping({"/placeorder", "/"})
+    @GetMapping({ "/placeorder", "/" })
     String placeorder() {
-       return "customer/placeorder";
-   }
+        return "customer/placeorder";
+    }
 }

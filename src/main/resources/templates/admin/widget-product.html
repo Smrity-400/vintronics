@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Widget Management</title>
+</head>
+
+<body>
+    <link rel="stylesheet" href="/style/admin/widget.css">
+    <table>
+        <thead>
+            <tr>
+                <th>Widget Name</th>
+                <th>Widget status</th>
+                <th>Product Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="categoryTable">
+            <tr data-th-each="product :${widget.products}">
+                <td data-th-text="${widget.widgetName}"></td>
+                <td data-th-text="${widget.widgetStatus}"
+                    data-th-class="${widget.widgetStatus.name() == 'ACTIVE' ? 'clr-yellow' : 'clr-red'}"></td>
+                <td data-th-text="${product.productTitle}"></td>
+                <td>
+                    <a data-th-href="|/admin/widget/product/remove?widgetId=${widget.widgetId}&productId=${product.productId}|"
+                        class="action-link"><i class="fa-solid fa-trash"></i></a>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

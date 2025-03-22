@@ -93,6 +93,7 @@ public class SellerController {
         seller.setUpdatedDate(LocalDateTime.now());
         seller.setCreatedBy(seller.getSellerName());
         seller.setUpdatedBy(seller.getSellerName());
+        user.setUserPassword(encoder.encode(user.getUserPassword()));
         sellerRepository.save(seller);
         return "redirect:/seller/sellerlogin";
     }

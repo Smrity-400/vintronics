@@ -138,6 +138,7 @@ CREATE TABLE seller (
     seller_store_name VARCHAR(100) NOT NULL,
     seller_email VARCHAR(100) UNIQUE NOT NULL,
     seller_phone VARCHAR(15) NOT NULL,
+    seller_password VARCHAR(255) NOT NULL,
     gst_no VARCHAR(15) UNIQUE NOT NULL,
     address TEXT NOT NULL,
     total_products INT DEFAULT 0,

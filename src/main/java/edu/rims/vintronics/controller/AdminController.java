@@ -1,10 +1,14 @@
 package edu.rims.vintronics.controller;
 
+import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.time.LocalDateTime;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,9 +22,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import edu.rims.vintronics.constant.WidgetStatus;
 import edu.rims.vintronics.entity.Category;
+import edu.rims.vintronics.entity.Product;
+import edu.rims.vintronics.entity.Widget;
 import edu.rims.vintronics.repository.CategoryRepository;
+import edu.rims.vintronics.repository.ProductRepository;
 import edu.rims.vintronics.repository.UserRepository;
+import edu.rims.vintronics.repository.WidgetRepository;
 
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -31,9 +40,15 @@ public class AdminController {
     @Autowired
     private CategoryRepository categoryRepository;
 
+    @Autowired
+    private ProductRepository productRepository;
+
     @SuppressWarnings("unused")
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private WidgetRepository widgetRepository;
 
     @GetMapping("/homepage")
     String adminCategory(Model model) {
@@ -77,5 +92,110 @@ public class AdminController {
     String admin() {
        return "admin/dashboard";
    }
+
+   @GetMapping("/widget")
+   public String getWidgets(Model model) {
+      model.addAttribute("widgets", widgetRepository.findAll());
+      return "admin/widget";
+  }
+
+  @PostMapping("/widget/add")
+    public String postMethodName(@RequestParam String widgetName, @RequestParam String widgetId,
+            @RequestParam int sequence) {
+        Widget widget = widgetRepository.findById(widgetId).orElse(new Widget());
+        widget.setWidgetName(widgetName);
+        widget.setSequence(sequence);
+        widget.setUpdatedDate(LocalDateTime.now());
+        widget.setCreatedDate(LocalDateTime.now());
+        widget.setUpdatedDate(LocalDateTime.now());
+        widget.setCreatedBy("admin");
+        widget.setUpdatedBy("admin");
+        widgetRepository.save(widget);
+        return "redirect:/admin/widget";
+    }
+
+    @GetMapping("/widget/remove")
+    public String removeWidget(@RequestParam("id") String widgetId) {
+        Widget widget = widgetRepository.findById(widgetId).orElseThrow();
+        widget.setWidgetStatus(WidgetStatus.INACTIVE);
+        widgetRepository.save(widget);
+        return "redirect:/admin/widget";
+    }
+
+    @GetMapping("/widget/edit")
+    public String editWidget(@RequestParam("id") String widgetId, Model model) {
+        Widget widget = widgetRepository.findById(widgetId).orElseThrow();
+        model.addAttribute("widget", widget);
+        model.addAttribute("widgets", widgetRepository.findAll());
+        return "admin/widget";
+    }
+
+    @GetMapping(value = "/productimage/{productId}", produces = { "image/jpg", "image/jpeg", "image/png" })
+    @ResponseBody
+    public byte[] getProductImage(@PathVariable String productId) throws IOException {
+
+        Product product = productRepository.findById(productId).orElseThrow();
+        String productImageUrl = product.getProductImageUrl();
+        if (productImageUrl == null || productImageUrl.startsWith("http")) {
+            return null;
+        }
+        FileInputStream fis = new FileInputStream(productImageUrl);
+        return fis.readAllBytes();
+    }
+
+    @PostMapping("/widget/product/add")
+    public String addProductToWidget(@RequestParam MultipartFile file) {
+
+        if (file.isEmpty())
+            return "redirect:/admin/widget";
+
+        try {
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(file.getInputStream()));
+            Map<String, String> details = new HashMap<>();
+
+            // for header
+            bufferedReader.readLine();
+            String line;
+
+            while ((line = bufferedReader.readLine()) != null) {
+                String[] split = line.split(",");
+                processDetails(split[0], split[1]);
+            }
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+        return "redirect:/admin/widget";
+    }
+
+    @GetMapping("/widget/products")
+    public String getMethodName(@RequestParam("id") String wigetId, Model model) {
+        Widget widget = widgetRepository.findById(wigetId).orElseThrow();
+        model.addAttribute("widget", widget);
+        return "admin/widget-product";
+    }
+
+    private void processDetails(String widgetId, String productId) {
+        Product product = productRepository.findById(productId).orElse(null);
+        Widget widget = widgetRepository.findById(widgetId).orElse(null);
+
+        if (product != null && widget != null) {
+            if (!widget.getProducts().contains(product)) {
+                widget.addProduct(product);
+                widgetRepository.save(widget);
+            }
+        }
+    }
+
+    @GetMapping("/widget/product/remove")
+    public String getMethodName(@RequestParam String widgetId, @RequestParam String productId) {
+        Widget widget = widgetRepository.findById(widgetId).orElseThrow();
+
+        widget.removeProduct(productId);
+
+        widgetRepository.save(widget);
+        return "redirect:/admin/widget";
+    }
 
 }

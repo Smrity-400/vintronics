@@ -3,6 +3,7 @@ package edu.rims.vintronics.controller;
 import java.time.LocalDateTime;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -19,6 +20,9 @@ public class LoginController {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private PasswordEncoder encoder;
+
     @GetMapping({ "/login", "/" })
     String login() {
         return "customer/login";
@@ -30,6 +34,7 @@ public class LoginController {
         user.setUpdatedDate(LocalDateTime.now());
         user.setCreatedBy("user");
         user.setUpdatedBy("user");
+        user.setUserPassword(encoder.encode(user.getUserPassword()));
         userRepository.save(user);
         return "redirect:/customer/login";
     }

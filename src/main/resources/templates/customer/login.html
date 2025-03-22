@@ -40,6 +40,7 @@
                             <i class='bx bxs-lock-alt'></i>
                             <input type="password" name="cpassword" placeholder="Confirm password" required>
                         </div>
+                        <input type="hidden" name="_csrf" data-th-value="${_csrf.token}">
                         <button type="submit">
                             Sign up
                         </button>
@@ -52,22 +53,21 @@
             </div>
             <div class="col align-items-center flex-col sign-in">
                 <div class="form-wrapper align-items-center">
-                    <form class="form sign-in">
+                    <form class="form sign-in" action="/customer/login" method="post">
                         <div class="input-group">
                             <i class='bx bxs-user'></i>
-                            <input type="text" placeholder="FullName" required>
+                            <input type="text" placeholder="Email" name="username" required>
                         </div>
                         <div class="input-group">
                             <i class='bx bxs-lock-alt'></i>
-                            <input type="password" placeholder="Password" required>
+                            <input type="password" placeholder="Password" name="password" required>
                         </div>
-                        <button type="submit">
-                            Sign in
-                        </button>
-                        <p>
+                        <input type="hidden" name="_csrf" data-th-value="${_csrf.token}">
+                        <button>SignIn</button>
+                        <p><br>
                             <a href="#">Forget Password?</a>
                         </p>
-                        <p>
+                        <p><br>
                             <span>Don't have an account?</span>
                             <b onclick="toggle()" class="pointer">Sign up here</b>
                         </p>
