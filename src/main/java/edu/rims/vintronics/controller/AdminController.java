@@ -78,4 +78,17 @@ public class AdminController {
        return "admin/dashboard";
    }
 
+   @GetMapping("/customer")
+   String customer() {
+      return "admin/customer";
+  }
+  
+    @GetMapping("/order")
+    String order() {
+        return "admin/order";
+    }
+
+
+
+
 }

@@ -1,18 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="/image/shortcut-logo.JPG">
-    <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="/style/admin/dashboard.css">
-</head>
+
+<head data-th-replace="~{fragment/admin :: head}"></head>
 <body>
-    <div class="dashboard">
-        <header>
-            <h2>Admin Dashboard</h2>
-        </header>
-        
+    <link rel="stylesheet" href="/style/admin/dashboard.css">
+    <!-- Sidebar -->
+    <div data-th-replace="~{fragment/admin :: sidebar}"></div>
+        <!-- Main Content -->
+    <div class="main-content">
         <section class="stats">
             <div class="card">
                 <h3>Products</h3>
@@ -66,5 +61,6 @@
             </ul>
         </section>
     </div>
+    <footer data-th-replace="~{fragment/admin :: footer}"></footer>
 </body>
 </html>
