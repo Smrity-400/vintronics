@@ -98,4 +98,13 @@ public class SellerController {
         return "redirect:/seller/sellerlogin";
     }
 
+    @GetMapping({ "/order", "/" })
+    String order() {
+        return "seller/order";
+    }
+
+    @GetMapping({ "/payment", "/" })
+    String payment() {
+        return "seller/payment";
+    }
 }

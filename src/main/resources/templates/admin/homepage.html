@@ -1,17 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
-    <link rel="shortcut icon" href="/image/shortcut-logo.JPG">
-    <link rel="stylesheet" href="/style/admin/home.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-</head>
-
+<head data-th-replace="~{fragment/admin :: head}"></head>
 <body>
+    <link rel="stylesheet" href="/style/admin/home.css">
     <!-- Sidebar -->
+
     <div class="sidebar">
         <div class="container">
             <div class="logo">
@@ -35,13 +29,10 @@
         </a>
     </div>
 
+  <div data-th-replace="~{fragment/admin :: sidebar}"></div>
+
     <!-- Main Content -->
     <div class="main-content">
-
-        <div class="search-box">
-            <input type="text" placeholder="Search...">
-            <i class="fa-solid fa-magnifying-glass"></i>
-        </div>
 
         <button class="add-category-btn" onclick="openModal()">+ Add Category</button>
 
@@ -123,12 +114,7 @@
             <button onclick="closeModal('deleteModal')">Cancel</button>
         </div>
     </div>
-
-    <footer>
-        <div class="copyright">
-            <p><b>&copy; 2025 Vintronics.com , All rights reserved.</b></p>
-        </div>
-    </footer>
+    <footer data-th-replace="~{fragment/admin :: footer}"></footer>
 
     <script src="/js/adminhome.js"></script>
 </body>

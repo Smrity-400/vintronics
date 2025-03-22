@@ -93,6 +93,7 @@ public class AdminController {
        return "admin/dashboard";
    }
 
+
    @GetMapping("/widget")
    public String getWidgets(Model model) {
       model.addAttribute("widgets", widgetRepository.findAll());
@@ -197,5 +198,16 @@ public class AdminController {
         widgetRepository.save(widget);
         return "redirect:/admin/widget";
     }
+
+   @GetMapping("/customer")
+   String customer() {
+      return "admin/customer";
+  }
+  
+    @GetMapping("/order")
+    String order() {
+        return "admin/order";
+    }
+
 
 }

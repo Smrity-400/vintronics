@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head data-th-replace="~{fragment/admin :: head}"></head>
+<body>
+    <link rel="stylesheet" href="/style/admin/Order.css">
+    <!-- Sidebar -->
+    <div data-th-replace="~{fragment/admin :: sidebar}"></div>
+     <!-- Main Content -->
+     <div class="main-content">
+    <!--table-->
+    <table>
+        <thead>
+            <tr>
+                <th>User Id</th>
+                <th>Date</th>
+                <th>Customer</th>
+                <th>Address</th>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Status</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>446</td>
+                <td>5/11/2024</td>
+                <td>Sambit</td>
+                <td>Rourkela</td>
+                <td>Classic Radio</td>
+                <td>1</td>
+                <td>
+                    <p class="status-delivered">Delivered</p>
+                </td>
+                <td><strong>&#8377;12000.00</strong></td>
+            </tr>
+        </tbody>
+
+        <tbody>
+            <tr>
+                <td>445</td>
+                <td>5/11/2024</td>
+                <td>Neha</td>
+                <td>Kolkata</td>
+                <td>Retro Camera</td>
+                <td>1</td>
+                <td>
+                    <p class="status-delivered">Delivered</p>
+                </td>
+                <td><strong>&#8377;12000.00</strong></td>
+            </tr>
+        </tbody>
+
+        <tbody>
+            <tr>
+                <td>446</td>
+                <td>5/11/2024</td>
+                <td>Pooja</td>
+                <td>Anugul</td>
+                <td>Vintage Clock</td>
+                <td>1</td>
+                <td>
+                    <p class="status-delivered">Delivered</p>
+                </td>
+                <td><strong>&#8377;12000.00</strong></td>
+            </tr>
+        </tbody>
+
+        <tbody>
+            <tr>
+                <td>446</td>
+                <td>5/11/2024</td>
+                <td>Veena</td>
+                <td>Patna</td>
+                <td>Classic Gramophone</td>
+                <td>1</td>
+                <td>
+                    <p class="status-delivered">Delivered</p>
+                </td>
+                <td><strong>&#8377;12000.00</strong></td>
+            </tr>
+        </tbody>
+
+    </table>
+     </div>
+  <footer data-th-replace="~{fragment/admin :: footer}"></footer>
+</body>
+</html>

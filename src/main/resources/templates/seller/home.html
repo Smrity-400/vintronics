@@ -1,25 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seller Dashboard</title>
-    <link rel="shortcut icon" href="/image/shortcut-logo.JPG">
-    <link rel="stylesheet" href="/style/seller/home.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-</head>
-
+<head data-th-replace="~{fragment/seller :: head}"></head>
 <body>
-    <div class="sidebar">
-        <h2>Seller Panel</h2>
-        <a href="#"><i class="fa-solid fa-gauge-high"></i> Dashboard</a>
-        <a href="#"><i class="fa-solid fa-list-check"></i> Manage Products</a>
-        <a href="#"><i class="fa-solid fa-box-open"></i> Orders</a>
-        <a href="#"><i class="fa-solid fa-indian-rupee-sign"></i> Payments</a>
-        <a href="#"><i class="fa-solid fa-ranking-star"></i> Reviews</a>
-        <a href="#"><i class="fa-solid fa-right-from-bracket"></i> Log Out</a>
-    </div>
+    <link rel="stylesheet" href="/style/seller/seller.home.css">
+    <!-- Sidebar -->
+    <div data-th-replace="~{fragment/seller :: sidebar}"></div>
+    
+    <!-- Main Content -->
+    <div class="main-content">
     <div class="content">
         <div class="top-bar">
             <h2>Manage Product</h2>
@@ -45,6 +34,8 @@
             </tr>
         </table>
     </div>
+</div>
+
     <div id="productModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
@@ -93,7 +84,9 @@
                 <input type="submit" class="submit-btn" value="Add Product">
             </form>
         </div>
-        <script src="/js/sellerhome.js"></script>
+    </div>
+    </div>
+        <script src="/js/sellerhome.js"></script> 
 </body>
 
 </html>

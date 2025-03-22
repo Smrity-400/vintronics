@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="shortcut icon" href="/image/shortcut-logo.JPG">
+    <link rel="stylesheet" href="/style/admin.common.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <div th:fragment="sidebar">
+    <div class="sidebar">
+        <div class="container">
+            <div class="logo">
+                <nav>
+                    <img src="/image/v2-logo.png" alt="Logo" class="logo">
+                </nav>
+            </div>
+        </div>
+
+        <a href="/admin/dashboard"><i class="fa-solid fa-gauge-high"></i> Dashboard</a>
+        <a href="/admin/homepage"><i class="fa-solid fa-list-check"></i> Manage Categories</a>
+        <a href="/admin/order"><i class="fa-solid fa-box-open"></i> Orders</a>
+        <a href="#"><i class="fa-solid fa-award"></i> Widgets</a>
+        <a href="/admin/customer"><i class="fas fa-user"></i>Customer</a>
+        <a href="#"><i class="fa-solid fa-indian-rupee-sign"></i> Payments</a>
+        <a href="#"><i class="fa-solid fa-ranking-star"></i> Reviews</a>
+        <a href="#"><i class="fa-solid fa-right-from-bracket"></i> Log Out</a>
+    </div>
+    </div>
+
+    <footer>
+        <div class="copyright">
+            <p><b>&copy; 2025 Vintronics.com , All rights reserved.</b></p>
+        </div>
+    </footer>
+</body>
+</html>

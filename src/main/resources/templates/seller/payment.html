@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head data-th-replace="~{fragment/seller :: head}"></head>
+<body>
+    <link rel="stylesheet" href="/style/seller/seller.payment.css">
+    <!-- Sidebar -->
+    <div data-th-replace="~{fragment/seller :: sidebar}"></div>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="table-container">
+        <h3>Total Earnings: ₹<span id="totalEarnings">0</span></h3>
+        <h3>Commission Paid: ₹<span id="totalCommission">0</span></h3>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Seller Payment ID</th>
+                    <th>Seller ID</th>
+                    <th>Order ID</th>
+                    <th>Amount</th>
+                    <th>Payment Status</th>
+                    <th>Payment Method</th>
+                    <th>Transaction Reference</th>
+                    <th>Created Date</th>
+                    <th>Updated Date</th>
+                </tr>
+            </thead>
+            <tbody id="transactionTable">
+                <!-- Payments will be added dynamically -->
+            </tbody>
+        </table>
+    </div>
+</div>
+    <script src="/js/sellerpayment.js"></script>
+</body>
+
+    
+
