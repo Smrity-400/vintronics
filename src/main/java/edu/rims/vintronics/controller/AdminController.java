@@ -6,12 +6,15 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.time.LocalDateTime;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,6 +35,7 @@ import edu.rims.vintronics.repository.UserRepository;
 import edu.rims.vintronics.repository.WidgetRepository;
 
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @Controller
 @RequestMapping("/admin")
@@ -87,6 +91,23 @@ public class AdminController {
 
         return fis.readAllBytes();
     }
+
+    @PostMapping("/admin/edit-category")
+    @ResponseBody
+    public ResponseEntity<?> editCategory(@RequestBody Category category) {
+        Optional<Category> existingCategory = categoryRepository.findById(category.getId());
+        if (existingCategory.isPresent()) {
+            Category updatedCategory = existingCategory.get();
+            updatedCategory.setCategoryTitle(category.getCategoryTitle());
+            updatedCategory.setCategoryDescription(category.getCategoryDescription());
+            updatedCategory.setCategoryStatus(category.getCategoryStatus());
+
+            categoryRepository.save(updatedCategory);
+            return ResponseEntity.ok(Collections.singletonMap("success", true));
+        }
+        return ResponseEntity.badRequest().body(Collections.singletonMap("success", false));
+    }
+
 
     @GetMapping("/dashboard")
     String admin() {
@@ -208,6 +229,5 @@ public class AdminController {
     String order() {
         return "admin/order";
     }
-
 
 }

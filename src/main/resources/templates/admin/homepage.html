@@ -53,12 +53,16 @@
                     <td data-th-text="${category.categoryDescription}"></td>
                     <td data-th-text="${category.categoryStatus}"></td>
                     <td>
-                        <button class="btn edit-btn" onclick="openEditModal(1)">Edit</button>
-                        <button class="btn delete-btn" onclick="openDeleteModal(1)">Delete</button>
+                        <button class="btn edit-btn"
+                            data-th-onclick="|openEditModal('${category.categoryId}', '${category.categoryTitle}', '${category.categoryDescription}', '${category.categoryStatus}')|">
+                            Edit
+                        </button>
+                        <button class="btn delete-btn" data-th-onclick="|openDeleteModal('${category.categoryId}')|">Delete</button>
                     </td>
                     <td><img data-th-src="|/admin/image/${category.categoryId}|" style="width: 50px;" alt=""></td>
                 </tr>
             </tbody>
+            
         </table>
     </div>
 
@@ -100,11 +104,24 @@
     <div id="editModal" class="modal">
         <div class="modal-content">
             <h3>Edit Category</h3>
+            <input type="hidden" id="editCategoryId">
+            <label>Category Name:</label>
             <input type="text" id="editCategoryInput">
+
+            <label>Description:</label>
+            <textarea id="editCategoryDesc"></textarea>
+
+            <label>Status:</label>
+            <select id="editCategoryStatus">
+                <option value="ACTIVE">Active</option>
+                <option value="INACTIVE">Inactive</option>
+            </select>
+
             <button onclick="saveEdit()">Save</button>
             <button onclick="closeModal('editModal')">Cancel</button>
         </div>
     </div>
+
 
     <!-- Delete Modal -->
     <div id="deleteModal" class="modal">
