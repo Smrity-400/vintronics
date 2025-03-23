@@ -12,6 +12,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
 import edu.rims.vintronics.entity.User;
+import edu.rims.vintronics.repository.SellerRepository;
 import edu.rims.vintronics.repository.UserRepository;
 
 @Configuration
@@ -19,15 +20,16 @@ public class SecurityConfig {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private SellerRepository sellerRepository;
+
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
         http.authorizeHttpRequests(request -> request.requestMatchers("/login", "/customer/login", 
-        "/error", "/style/**","/customer/sign-up","/js/**", "/image/**","/video/**", 
-        "/customer/**", "/seller/**" )
+        "/error", "/style/**","/customer/sign-up","/js/**", "/image/**","/video/**")
             .permitAll()
             .requestMatchers("/admin/**").hasRole("ADMIN").anyRequest().authenticated());
-            http.formLogin(form -> form.loginPage("/customer/login").defaultSuccessUrl("/customer/home"));
-            http.formLogin(form -> form.loginPage("/seller/sellerlogin").defaultSuccessUrl("/seller/home"));
+            http.formLogin(form -> form.loginPage("/customer/login").successForwardUrl("/user"));
             http.logout(Customizer.withDefaults());
             return http.build();
     }

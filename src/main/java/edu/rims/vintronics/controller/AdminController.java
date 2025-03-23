@@ -71,7 +71,6 @@ public class AdminController {
         category.setUpdatedDate(LocalDateTime.now());
         category.setCreatedBy("admin");
         category.setUpdatedBy("admin");
-
         categoryRepository.save(category);
         return "redirect:/admin/homepage";
     }

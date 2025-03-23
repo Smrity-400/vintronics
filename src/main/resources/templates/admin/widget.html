@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Widget Management</title>
-    <link rel="stylesheet" href="/style/admin/widget.css">
+<head data-th-replace="~{fragment/admin :: head}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 
 <body>
-    <div class="container">
+    <link rel="stylesheet" href="/style/admin/widget.css">
+    <div data-th-replace="~{fragment/admin :: sidebar}"></div>
+    <div class="main-content">
+    
         <h2>Widget Management</h2>
         <div class="addWidgetContainer">
             <form action="/admin/widget/add" method="post">
@@ -81,7 +80,7 @@
             </div>
         </div>
     </div>
-
+    <footer data-th-replace="~{fragment/admin :: footer}"></footer>
     <script src="/js/widget.js"></script>
 </body>
 

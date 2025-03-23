@@ -5,31 +5,7 @@
 <body>
     <link rel="stylesheet" href="/style/admin/home.css">
     <!-- Sidebar -->
-
-    <div class="sidebar">
-        <div class="container">
-            <div class="logo">
-                <nav>
-                    <img src="/image/v2-logo.png" alt="Logo" class="logo">
-                </nav>
-            </div>
-        </div>
-
-        <a href="/admin/dashboard"><i class="fa-solid fa-gauge-high"></i> Dashboard</a>
-        <a href="/admin/homepage"><i class="fa-solid fa-list-check"></i> Manage Categories</a>
-        <a href="#"><i class="fa-solid fa-box-open"></i> Orders</a>
-        <a href="/admin/widget"><i class="fa-solid fa-award"></i> Widgets</a>
-        <a href="#"><i class="fa-solid fa-indian-rupee-sign"></i> Payments</a>
-        <a href="#"><i class="fa-solid fa-ranking-star"></i> Reviews</a>
-        <a href="#">
-            <form action="/logout" method="post">
-                <input type="hidden" name="_csrf" data-th-value="${_csrf.token}">
-                <button type="submit"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
-            </form>
-        </a>
-    </div>
-
-  <div data-th-replace="~{fragment/admin :: sidebar}"></div>
+           <div data-th-replace="~{fragment/admin :: sidebar}"></div>
 
     <!-- Main Content -->
     <div class="main-content">
@@ -91,6 +67,7 @@
                         <td><input type="file" name="categoryImage" id="categoryImage" accept="image/*"></td>
                     </tr>
                 </table>
+                <input type="hidden" name="_csrf" data-th-value="${_csrf.token}">
                 <input type="submit" class="submit-btn" value="Add Category">
             </form>
         </div>
