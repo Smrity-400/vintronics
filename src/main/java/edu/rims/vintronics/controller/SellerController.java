@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -38,6 +39,9 @@ public class SellerController {
 
     @Autowired
     private ProductRepository productRepository;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @SuppressWarnings("unused")
     @Autowired
@@ -77,7 +81,6 @@ public class SellerController {
         product.setCreatedBy(seller.getSellerName());
         product.setUpdatedBy(seller.getSellerName());
         product.setSeller(seller);
-
         productRepository.save(product);
         return "redirect:/seller/home";
     }
@@ -96,5 +99,6 @@ public class SellerController {
         sellerRepository.save(seller);
         return "redirect:/seller/sellerlogin";
     }
+
 
 }
