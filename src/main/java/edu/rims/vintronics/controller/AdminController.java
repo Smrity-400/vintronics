@@ -27,9 +27,11 @@ import org.springframework.web.multipart.MultipartFile;
 
 import edu.rims.vintronics.constant.WidgetStatus;
 import edu.rims.vintronics.entity.Category;
+import edu.rims.vintronics.entity.Order;
 import edu.rims.vintronics.entity.Product;
 import edu.rims.vintronics.entity.Widget;
 import edu.rims.vintronics.repository.CategoryRepository;
+import edu.rims.vintronics.repository.OrderRepository;
 import edu.rims.vintronics.repository.ProductRepository;
 import edu.rims.vintronics.repository.UserRepository;
 import edu.rims.vintronics.repository.WidgetRepository;
@@ -53,6 +55,9 @@ public class AdminController {
 
     @Autowired
     private WidgetRepository widgetRepository;
+
+    @Autowired
+    private OrderRepository orderRepository;
 
     @GetMapping("/homepage")
     String adminCategory(Model model) {
@@ -225,7 +230,9 @@ public class AdminController {
   }
   
     @GetMapping("/order")
-    String order() {
+    String order(Model model) {
+        List<Order> orders = orderRepository.findAll();
+        model.addAttribute("orders", orders);
         return "admin/order";
     }
 

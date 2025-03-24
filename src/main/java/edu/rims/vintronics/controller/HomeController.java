@@ -1,5 +1,6 @@
 package edu.rims.vintronics.controller;
 
+import java.security.Principal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,9 +9,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import edu.rims.vintronics.constant.OrderStatus;
 import edu.rims.vintronics.entity.Category;
+import edu.rims.vintronics.entity.Order;
 import edu.rims.vintronics.entity.Product;
 import edu.rims.vintronics.repository.CategoryRepository;
+import edu.rims.vintronics.repository.OrderRepository;
 import edu.rims.vintronics.repository.ProductRepository;
 
 @Controller
@@ -22,6 +26,9 @@ public class HomeController {
 
     @Autowired
     private ProductRepository productRepository;
+
+    @Autowired 
+    private OrderRepository orderRepository;
 
     @GetMapping({ "/home", "/" })
     public String home(Model model) {
@@ -46,12 +53,11 @@ public class HomeController {
     }
 
     @GetMapping({ "/orderhistory", "/" })
-    String orderhistory() {
-        return "customer/orderhistory";
+    String orderhistory(Principal principal, Model model) {
+        List<Order> orders = orderRepository.findByUserUserEmailAndOrderStatusNot(principal.getName(),
+            OrderStatus.CART);
+            model.addAttribute("orders", orders);
+        return "/customer/orderhistory";
     }
 
-    @GetMapping({ "/placeorder", "/" })
-    String placeorder() {
-        return "customer/placeorder";
-    }
 }

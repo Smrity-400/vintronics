@@ -3,6 +3,8 @@ package edu.rims.vintronics.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.ArrayList;
 import java.util.List;
 import edu.rims.vintronics.constant.ProductStatus;
 
@@ -47,13 +49,19 @@ public class Product extends Auditable {
     @OneToMany(mappedBy = "product")
     private List<OrderItem> orderItems;
 
+    @ManyToMany(mappedBy = "products")
+    private List<Widget> widgets;
+
     public void addWidget(Widget widget) {
-        // TODO Auto-generated method stub
+       if (widgets == null)
+            widgets = new ArrayList<>();
+
+        widgets.add(widget);
         throw new UnsupportedOperationException("Unimplemented method 'addWidget'");
     }
 
     public void removeWidget(Widget widget) {
-        // TODO Auto-generated method stub
+       widgets.remove(widget);
         throw new UnsupportedOperationException("Unimplemented method 'removeWidget'");
     }
 }
