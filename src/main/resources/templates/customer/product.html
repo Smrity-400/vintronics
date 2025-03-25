@@ -65,7 +65,7 @@
                     <span class="price" th:text="|₹${product.productPrice}|"></span>
                 </div>
                 <div class="product-action">
-                    <a href="#">Add To Cart</a>
+                    <a data-th-href="|/customer/cart/add?productId=${product.productId}|">Add To Cart</a>
                     <br>
                     <a th:href="@{/customer/pdp/{id}(id=${product.productId})}">View Details</a>
                 </div>

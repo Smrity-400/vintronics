@@ -63,7 +63,7 @@ public class AdminController {
     String adminCategory(Model model) {
         List<edu.rims.vintronics.entity.Category> categories = categoryRepository.findAll();
         model.addAttribute("categories", categories);
-        return "admin/homepage";
+        return "/admin/homepage";
     }
 
     @PostMapping("/admin/homepage")
@@ -91,9 +91,9 @@ public class AdminController {
 
         String imageName = category.getCategoryImageUrl();
 
-        FileInputStream fis = new FileInputStream(imageName);
-
-        return fis.readAllBytes();
+        try (FileInputStream fis = new FileInputStream(imageName)) {
+            return fis.readAllBytes();
+        }
     }
 
     @PostMapping("/admin/edit-category")
@@ -165,8 +165,9 @@ public class AdminController {
         if (productImageUrl == null || productImageUrl.startsWith("http")) {
             return null;
         }
-        FileInputStream fis = new FileInputStream(productImageUrl);
-        return fis.readAllBytes();
+        try (FileInputStream fis = new FileInputStream(productImageUrl)) {
+            return fis.readAllBytes();
+        }
     }
 
     @PostMapping("/widget/product/add")
@@ -177,8 +178,6 @@ public class AdminController {
 
         try {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(file.getInputStream()));
-            Map<String, String> details = new HashMap<>();
-
             // for header
             bufferedReader.readLine();
             String line;

@@ -37,7 +37,7 @@ public class User extends Auditable {
     @Column(name = "user_role", columnDefinition = "ENUM('CUSTOMER', 'ADMIN', 'SELLER')")
     private UserRole userRole = UserRole.CUSTOMER;
 
-    @OneToMany(mappedBy = "buyer")
+    @OneToMany(mappedBy = "user")
     private List<Order> orders;
 
 }

@@ -28,6 +28,7 @@ public class SecurityConfig {
         http.authorizeHttpRequests(request -> request.requestMatchers("/login", "/customer/login", 
         "/error", "/style/**","/customer/sign-up","/js/**", "/image/**","/video/**")
             .permitAll()
+            .requestMatchers("/seller/**").hasRole("SELLER")
             .requestMatchers("/admin/**").hasRole("ADMIN").anyRequest().authenticated());
             http.formLogin(form -> form.loginPage("/customer/login").successForwardUrl("/user"));
             http.logout(Customizer.withDefaults());

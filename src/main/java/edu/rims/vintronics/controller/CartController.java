@@ -18,6 +18,8 @@ import edu.rims.vintronics.repository.ProductRepository;
 import edu.rims.vintronics.service.UserService;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.fasterxml.jackson.annotation.JsonCreator.Mode;
+
 
 @Controller
 @RequestMapping("/customer")
@@ -32,29 +34,40 @@ public class CartController {
     @Autowired
     private ProductRepository productRepository;
 
-    @GetMapping({"/cart", "/"})
-     String cart(Principal principal, Model model) {
+    @GetMapping("/cart")
+    public String getCart(Principal principal,Model  model){
+        String email = principal.getName();
+        User user = userService.getUser(email);
+
+        Order order = orderRepository.findByUserUserIdAndOrderStatus(user.getUserId(),
+         OrderStatus.CART) .orElse(new Order());
+        model.addAttribute("order", order);
+        return "customer/cart";
+    }
+
+    @GetMapping({"/cart/add"})
+     String cart(Principal principal, @RequestParam String productId) {
         String username = principal.getName();
         User user = userService.getUser(username);
         Order order = orderRepository.findByUserUserIdAndOrderStatus(user.getUserId(),
          OrderStatus.CART) .orElse(new Order());
-        order.setBuyer(user);
-
+         order.setUser(user);
         Product product = productRepository.findById(productId).orElseThrow();
 
         OrderItem orderItem = new OrderItem(product);
         order.addOrderItem(orderItem);
 
+
         orderRepository.save(order);
         return "redirect:/customer/cart";
     }
 
-    @GetMapping("/cutomer/cart/remove")
+    @GetMapping("/cart/remove")
     public String removeItem(@RequestParam("OrderItem") String orderItemId, Principal principal) {
         String username = principal.getName();
         User user = userService.getUser(username);
         Order order = orderRepository.findByUserUserIdAndOrderStatus(user.getUserId(), OrderStatus.CART)
-            .orElse("null");
+            .orElse(null);
         orderRepository.save(order);
         return "redirect:/customer/cart";
     }

@@ -19,10 +19,10 @@ public class Order extends Auditable{
     private String orderId;
 
     @ManyToOne
-    @JoinColumn(name = "buyer_user_id", nullable = false, foreignKey = @ForeignKey(name = "fk_user"))
-    private User buyer;
+    @JoinColumn(nullable = false, foreignKey = @ForeignKey(name = "fk_user"))
+    private User user;
 
-    @Column(name = "order_total_price", nullable = false, precision = 10, scale = 2)
+    @Column(name = "order_total_price", nullable = false)
     private double orderTotalPrice;
 
     @Enumerated(EnumType.STRING)

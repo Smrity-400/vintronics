@@ -12,10 +12,6 @@ import edu.rims.vintronics.constant.OrderItemStatus;
 @Setter
 public class OrderItem extends Auditable {
 
-    public OrderItem(Product product2) {
-        //TODO Auto-generated constructor stub
-    }
-
     @Id
     @Column(name = "order_item_id", nullable = false, length = 255)
     private String orderItemId;

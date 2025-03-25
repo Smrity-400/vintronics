@@ -2,10 +2,11 @@
 <html lang="en">
 
 <head data-th-replace="~{fragment/admin :: head}"></head>
+
 <body>
     <link rel="stylesheet" href="/style/admin/home.css">
     <!-- Sidebar -->
-           <div data-th-replace="~{fragment/admin :: sidebar}"></div>
+    <div data-th-replace="~{fragment/admin :: sidebar}"></div>
 
     <!-- Main Content -->
     <div class="main-content">
@@ -29,16 +30,17 @@
                     <td data-th-text="${category.categoryDescription}"></td>
                     <td data-th-text="${category.categoryStatus}"></td>
                     <td>
-                        <button class="btn edit-btn"
+                        <!-- <button class="btn edit-btn"
                             data-th-onclick="|openEditModal('${category.categoryId}', '${category.categoryTitle}', '${category.categoryDescription}', '${category.categoryStatus}')|">
                             Edit
                         </button>
-                        <button class="btn delete-btn" data-th-onclick="|openDeleteModal('${category.categoryId}')|">Delete</button>
+                        <button class="btn delete-btn"
+                            data-th-onclick="|openDeleteModal([[${category.categoryId}]])|">Delete</button> -->
                     </td>
                     <td><img data-th-src="|/admin/image/${category.categoryId}|" style="width: 50px;" alt=""></td>
                 </tr>
             </tbody>
-            
+
         </table>
     </div>
 

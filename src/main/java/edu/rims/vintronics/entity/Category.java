@@ -33,4 +33,9 @@ public class Category extends Auditable {
 
     @OneToMany(mappedBy = "category")
     private List<Product> products;
+
+    public String getId() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getId'");
+    }
 }
