@@ -27,8 +27,9 @@
                 <td data-th-text="${product.productDescription}"></td>
                 <td data-th-text="${product.productStatus}"></td>
                 <td>
-                    <button class="btn edit-btn" onclick="openEditModal(1)">Edit</button>
-                    <button class="btn delete-btn" onclick="openDeleteModal(1)">Delete</button>
+                     <button class="edit-btn" data-th-onclick="openModal([[${product.productId}]])">Edit</button>
+                        <a data-th-href="|/seller/product/remove?product=${product.productId}|"
+                            class="delete-btn">Delete</a>
                 </td>
                 <td ><img data-th-src="|/customer/image/${product.productId}|" width="50" alt=""></td>
             </tr>

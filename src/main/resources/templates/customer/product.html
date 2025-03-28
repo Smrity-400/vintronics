@@ -57,7 +57,7 @@
             <article th:each="product : ${products}"
                 class="products">
                 <div class="img-container">
-                    <img data-th-src="|/customer/image/${product.productId}|" alt="camera">
+                    <img data-th-src="|/customer/image/${product.productId}|" alt="camera" style="width: 100px !important;">
                 </div>
                 <div class="product-info">
                     <h2 th:text="${product.productTitle}"></h2>
@@ -82,7 +82,7 @@
                     <span class="price" th:text="|₹${product.productPrice}|"></span>
                 </div>
                 <div class="product-action">
-                    <a href="#">Add To Cart</a>
+                    <a data-th-href="|/customer/cart/add?productId=${product.productId}|">Add To Cart</a>
                     <br>
                     <a th:href="@{/customer/pdp/{id}(id=${product.productId})}">View Details</a>
                 </div>

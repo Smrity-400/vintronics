@@ -1,6 +1,8 @@
 package edu.rims.vintronics.controller;
 
 import java.security.Principal;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -51,13 +53,22 @@ public class CartController {
         User user = userService.getUser(username);
         Order order = orderRepository.findByUserUserIdAndOrderStatus(user.getUserId(),
          OrderStatus.CART) .orElse(new Order());
-         order.setUser(user);
         Product product = productRepository.findById(productId).orElseThrow();
 
         OrderItem orderItem = new OrderItem(product);
         order.addOrderItem(orderItem);
 
-
+        order.setCreatedBy(user.getUserName());
+        order.setUpdatedBy(user.getUserName());
+        order.setCreatedDate(LocalDateTime.now());
+        order.setUpdatedDate(LocalDateTime.now());
+        order.setOrderStatus(OrderStatus.CART);
+        order.setUser(user);
+        order.setOrderTotalPrice(orderItem.getOrderItemTotalPrice());
+        orderItem.setCreatedDate(LocalDateTime.now());
+        orderItem.setUpdatedDate(LocalDateTime.now());
+        orderItem.setCreatedBy(user.getUserName());
+        orderItem.setUpdatedBy(user.getUserName());
         orderRepository.save(order);
         return "redirect:/customer/cart";
     }

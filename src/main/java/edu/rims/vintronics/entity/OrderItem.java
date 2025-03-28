@@ -14,6 +14,7 @@ public class OrderItem extends Auditable {
 
     @Id
     @Column(name = "order_item_id", nullable = false, length = 255)
+    @GeneratedValue(strategy = GenerationType.UUID)
     private String orderItemId;
 
     @ManyToOne
