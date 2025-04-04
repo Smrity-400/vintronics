@@ -232,13 +232,6 @@ main {
   text-align: center;
 }
 
-.product-container article img {
-  border-radius: 5px;
-  aspect-ratio: 1 1;
-  object-fit: cover;
-  background-position: left;
-}
-
 .price {
   font-size: 18px;
   color: #ff9800;
@@ -264,7 +257,6 @@ main {
 .product-action:active {
   transform: translateY(2px);
 }
-
 
 .copyright {
   text-align: center;

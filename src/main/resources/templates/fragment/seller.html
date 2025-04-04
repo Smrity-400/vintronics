@@ -20,11 +20,10 @@
                 </nav>
             </div>
         </div>
-        <a href="#"><i class="fa-solid fa-gauge-high"></i> Dashboard</a>
+        <a href="/seller/seller.dashboard"><i class="fa-solid fa-gauge-high"></i> Dashboard</a>
         <a href="/seller/home"><i class="fa-solid fa-list-check"></i> Manage Products</a>
         <a href="/seller/order"><i class="fa-solid fa-box-open"></i> Orders</a>
         <a href="/seller/payment"><i class="fa-solid fa-indian-rupee-sign"></i> Payments</a>
-        <a href="#"><i class="fa-solid fa-ranking-star"></i> Reviews</a>
         <p style="width: 100%;">
             <form action="/logout" method="post">
                 <input type="hidden" name="_csrf" data-th-value="${_csrf.token}">

@@ -90,6 +90,21 @@ public class SellerController {
         return "seller/sellerlogin";
     }
 
+    @GetMapping({"/seller.dashboard", "/"})
+    String dashboard() {
+       return "seller/seller.dashboard";
+   }
+   
+   @GetMapping({"/order", "/"})
+    String order() {
+       return "seller/order";
+   }
+
+   @GetMapping({"/payment", "/"})
+    String payment() {
+       return "seller/payment";
+   }
+
     @PostMapping("/signup")
     String signUp(@ModelAttribute Seller seller) {
         seller.setCreatedDate(LocalDateTime.now());

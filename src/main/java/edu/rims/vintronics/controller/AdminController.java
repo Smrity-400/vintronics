@@ -227,6 +227,11 @@ public class AdminController {
    String customer() {
       return "admin/customer";
   }
+
+  @GetMapping({"/payment", "/"})
+    String payment() {
+       return "admin/payment";
+   }
   
     @GetMapping("/order")
     String order(Model model) {
