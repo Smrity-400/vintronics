@@ -30,13 +30,10 @@
                     <td data-th-text="${category.categoryDescription}"></td>
                     <td data-th-text="${category.categoryStatus}"></td>
                     <td>
-                        <!-- <button class="btn edit-btn"
-                            data-th-onclick="|openEditModal('${category.categoryId}', '${category.categoryTitle}', '${category.categoryDescription}', '${category.categoryStatus}')|">
-                            Edit
-                        </button>
-                        <button class="btn delete-btn"
-                            data-th-onclick="|openDeleteModal([[${category.categoryId}]])|">Delete</button> -->
-                    </td>
+                        <button class="edit-btn" data-th-onclick="openModal([[${category.categoryId}]])">Edit</button>
+                           <a data-th-href="|/admin/category/remove?category=${category.categoryId}|"
+                               class="delete-btn">Delete</a>
+                   </td>
                     <td><img data-th-src="|/admin/image/${category.categoryId}|" style="width: 50px;" alt=""></td>
                 </tr>
             </tbody>

@@ -52,6 +52,11 @@ public class HomeController {
         return "customer/about";
     }
 
+    @GetMapping({ "/faq", "/" })
+    String faq() {
+        return "customer/faq";
+    }
+
     @GetMapping({ "/orderhistory", "/" })
     String orderhistory(Principal principal, Model model) {
         List<Order> orders = orderRepository.findByUserUserEmailAndOrderStatusNot(principal.getName(),

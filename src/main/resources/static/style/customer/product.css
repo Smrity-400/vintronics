@@ -232,12 +232,31 @@ main {
   text-align: center;
 }
 
-.product-container article img {
-  border-radius: 5px;
-  aspect-ratio: 1 1;
-  object-fit: cover;
-  background-position: left;
+.img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Ensures consistency */
+  height: 200px; /* Set a fixed height for all images */
 }
+
+.img-container img {
+  width: 280px; /* Match button width */
+  height: 180px; /* Fixed height for uniformity */
+  object-fit: cover; /* Ensures proper cropping */
+  border-radius: 5px; /* Smooth corners */
+}
+
+/* Ensuring uniform card height */
+.product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 400px; /* Adjust based on content */
+}
+
+
 
 .price {
   font-size: 18px;

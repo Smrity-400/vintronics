@@ -35,20 +35,7 @@ th {
     background: #34495e;
     color: white;
 }
-.btn-edit {
-    background: #f1c40f;
-    color: black;
-    padding: 5px 10px;
-    border: none;
-    cursor: pointer;
-}
-.btn-delete {
-    background: #e74c3c;
-    color: white;
-    padding: 5px 10px;
-    border: none;
-    cursor: pointer;
-}
+
 .modal {
     display: none;
     position: fixed;
@@ -104,9 +91,15 @@ input, textarea, select {
 }
 
 .edit-btn {
-    background: #f0ad4e;
+    background-color: #f0ad4e;
     color: white;
     border: none;
+    cursor: pointer;
+    padding-inline: 1rem;
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 14px;
+
 }
 
 .btn {
@@ -119,6 +112,11 @@ input, textarea, select {
     background: #d9534f;
     color: white;
     border: none;
+    cursor: pointer;
+    padding-inline: 0.5rem;
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 14px;
 }
 
 .btn {
