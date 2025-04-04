@@ -203,16 +203,29 @@ header nav a:hover {
     margin: 40px;
 }
 
-.product-gallery {
-    flex: 1;
-}
-
 .main-image {
-    width: 100%;
-    height: auto;
+    width: 700%;
+    height: 650%s;
     border: 2px solid #ddd;
     border-radius: 10px;
 }
+
+.product-gallery {
+    width: 100%; /* Ensure it fills the container */
+    max-width: 600px; /* Adjust based on your product details container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Prevent overflow issues */
+}
+
+.product-image {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 400px; /* Adjust max height if necessary */
+    object-fit: contain; /* Ensures the full image is visible without distortion */
+}
+
 
 .thumbnail-gallery {
     display: flex;
@@ -283,7 +296,7 @@ header nav a:hover {
     margin-top: 20px;
 }
 
-.add-to-cart, .buy-now {
+.add-to-cart {
     padding: 12px 20px;
     margin-right: 10px;
     border: none;
@@ -293,29 +306,32 @@ header nav a:hover {
     font-size: 1em;
 }
 
-.add-to-cart {
-    background: linear-gradient(90deg, #ff8a00, #e52e71);
+.purchase-section a {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #ff6600; /* Vibrant orange */
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.3s ease, transform 0.2s;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.buy-now {
-    background: linear-gradient(90deg, #ff8a00, #e52e71);
-}
-.buy-now:hover {
-    background: linear-gradient(90deg, #e52e71, #ff8a00);
-    transform: scale(1.1);
+.purchase-section a:hover {
+    background-color: #e65c00; /* Darker shade on hover */
+    transform: translateY(-2px); /* Slight lift effect */
 }
 
-.buy-now:active {
-    transform: scale(0.95);
-}
-.add-to-cart:hover {
-    background: linear-gradient(90deg, #e52e71, #ff8a00);
-    transform: scale(1.1);
+.purchase-section a:active {
+    background-color: #cc5200; /* Even darker on click */
+    transform: translateY(0px); /* Reset position */
 }
 
-.add-to-cart:active {
-    transform: scale(0.95);
-}
 .delivery-info {
     margin-top: 20px;
     font-size: 0.9em;

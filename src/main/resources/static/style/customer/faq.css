@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    background: url('/image/bg.jpg') no-repeat center center/cover;
+    margin: 0;
+    padding: 20px;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+h2 {
+    text-align: center;
+}
+.faq {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+.faq input {
+    display: none;
+}
+.faq label {
+    display: block;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+    background: #007bff;
+    color: white;
+    border-radius: 5px;
+}
+.faq label:hover {
+    background: #0056b3;
+}
+.faq-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    background: #f9f9f9;
+    padding: 0 10px;
+    border-radius: 5px;
+}
+.faq input:checked ~ .faq-content {
+    max-height: 100px;
+    padding: 10px;
+}

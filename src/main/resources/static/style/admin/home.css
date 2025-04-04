@@ -52,14 +52,6 @@ th {
     color: white;
 }
 
-button.edit {
-    background: #f39c12;
-}
-
-button.delete {
-    background: #c0392b;
-}
-
 .add-category-btn {
     display: block;
     background: goldenrod;
@@ -154,12 +146,21 @@ th {
     background: #f0ad4e;
     color: white;
     border: none;
+    cursor: pointer;
+    padding-inline: 1rem;
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 14px;
 }
 
 .delete-btn {
     background: #d9534f;
     color: white;
     border: none;
+    cursor: pointer;
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 14px;
 }
 
 .modal {

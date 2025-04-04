@@ -56,12 +56,7 @@
     <div class="content">
         <div class="product-page">
             <div class="product-gallery">
-                <img src="/image/lamp2.jpg" alt="Retro Clock" class="main-image">
-                <div class="thumbnail-gallery">
-                    <img src="/image/lamp2.jpg" alt="Thumb 1">
-                    <img src="/image/lamp2.jpg" alt="Thumb 2">
-                    <img src="/image/lamp2.jpg" alt="Thumb 3">
-                </div>
+                <img data-th-src="|/customer/image/${product.productId}|" alt="camera" class="product-image">
             </div>
             <div class="product-details">
                 <h1 th:text="${product.productTitle}"></h1>
@@ -77,8 +72,7 @@
                     </ul>
                 </div>
                 <div class="purchase-section">
-                    <button class="add-to-cart">Add to Cart</button>
-                    <button class="buy-now">Buy Now</button>
+                    <a data-th-href="|/customer/cart/add?productId=${product.productId}|">Add To Cart</a>-
                 </div>
                 <div class="delivery-info">
                     <p>Delivery by: <strong>Tuesday, 25th February</strong></p>
